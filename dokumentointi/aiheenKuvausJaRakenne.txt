@@ -9,6 +9,8 @@ pisteitä)
 
 
 Pelin kulku:
+        -1. pelaaja syöttää nimensä
+        -2. pelaaja syöttää nimensä
         -1. pelaaja sijoittelee laivansa vaaka tai pystysuoraan. Laivat eivät voi olla päällekkäin
         -2. pelaaja sijoittelee laivansa
         - varsinainen peliosuus alkaa, 1. pelaaja aloittaa pelin valitsemalla ruudun         (tulituskohteen)
