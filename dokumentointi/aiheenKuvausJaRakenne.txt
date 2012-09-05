@@ -1,7 +1,11 @@
 ﻿Laivanupotus
 
 
-Toteutetaan kahden pelaajan versio laivanupotuksesta. Laivan upotuksessa pelikenttä on 2-ulotteinen ruudukko, luultavasti 10x10. Pelissä sijoitellaan oma laivasto paikalleen, jonka jälkeen niitä ei enää saa liikutella. Vastustajan laivoja koitetaan tulittaa arvaamalla niiden paikkoja vuorotellen. Peli päättyy kun toisen laivasto on tuhoutunut kokonaan. Pisteitä saa sen mukaan, kuinka monta laukausta on käyttänyt tuhoamiseen (vähemmillä yrityksillä enemmän pisteitä)
+Toteutetaan kahden pelaajan versio laivanupotuksesta. Laivan upotuksessa pelikenttä on 2-ulotteinen ruudukko,
+luultavasti 10x10. Pelissä sijoitellaan oma laivasto paikalleen, jonka jälkeen niitä ei enää saa liikutella. Vastustajan
+laivoja koitetaan tulittaa arvaamalla niiden paikkoja vuorotellen. Peli päättyy kun toisen laivasto on tuhoutunut
+kokonaan. Pisteitä saa sen mukaan, kuinka monta laukausta on käyttänyt tuhoamiseen (vähemmillä yrityksillä enemmän
+pisteitä)
 
 
 Pelin kulku:
@@ -12,4 +16,10 @@ Pelin kulku:
         - Peli loppuu kun toisen laivasto on tuhoutunut
 
 
-Ohjelma kirjaa pelaajien pisteitä tekstitiedostoon ja näyttää ne parhuusjärjestyksessä.
+Pelaajien toiminnot:
+	- Nimen syöttö
+	- Laivojen sijoitus, onnistuu jos laitettu oikein eli vain vaaka tai pystysuoraan
+	- Tulitus
+
+Ohjelma kirjaa pelaajien pisteitä tekstitiedostoon ja näyttää ne parhuusjärjestyksessä. Tilastoa voi tarkastella
+alkuvalikosta
