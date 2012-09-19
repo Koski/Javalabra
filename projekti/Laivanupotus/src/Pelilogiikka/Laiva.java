@@ -22,8 +22,7 @@ public class Laiva {
         this.alkuY = alkuY;
         this.loppuX = loppuX;
         this.loppuY = loppuY;
-        this.osumienLkm = 0;
-        laivanKoordinaatit = new HashMap<Integer,Integer>();       
+        this.osumienLkm = 0;    
     }
     
     public void laivaanOsui() {
@@ -76,20 +75,7 @@ public class Laiva {
             return false;
         }
     }
-    public void lisaaKoordinaatitListaan() {
-        if (onkoVaaka() && alkuY<loppuY) {
-            while (loppuY>=alkuY) {
-                laivanKoordinaatit.put(alkuX, alkuY);
-                alkuY ++;
-            }
-        }
-        if (onkoVaaka() && alkuY>loppuY) {
-            while (loppuY<=alkuY) {
-                laivanKoordinaatit.put(alkuX, alkuY);
-                alkuY --;
-            }
-        }
-    }
+    
     public int getKoko() {
         return koko;
     }

@@ -6,12 +6,12 @@ package Pelilogiikka;
 
 public class Nappula {
     
-    boolean laiva;
+    Laiva laiva;
     boolean osuttu;
     int xKoord;
     int yKoord;
 
-    public Nappula(boolean laiva, boolean osuttu, int xKoord, int yKoord) {
+    public Nappula(Laiva laiva, boolean osuttu, int xKoord, int yKoord) {
         this.laiva = laiva;
         this.osuttu = osuttu;
         this.xKoord = xKoord;
@@ -34,7 +34,7 @@ public class Nappula {
         return yKoord;
     }
 
-    public void setLaiva(boolean laiva) {
+    public void setLaiva(Laiva laiva) {
         this.laiva = laiva;
     }
 
@@ -42,7 +42,7 @@ public class Nappula {
         this.osuttu = osuttu;
     }
 
-    public boolean isLaiva() {
+    public Laiva getLaiva() {
         return laiva;
     }
 
