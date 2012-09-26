@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="6" failures="0" hostname="dhp-66" name="Pelilogiikka.LaivaTest" tests="6" time="0.127" timestamp="2012-09-19T14:53:57">
+<testsuite errors="0" failures="0" hostname="dhp-45" name="Pelilogiikka.LaivaTest" tests="6" time="0.092" timestamp="2012-09-26T14:09:03">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
@@ -50,11 +50,11 @@
     <property name="libs.restapi.javadoc" value="/opt/netbeans-7.2/enterprise/docs/jsr311-api-1.1.1-javadoc.zip" />
     <property name="libs.JWSAntTasks.maven-pom" value="" />
     <property name="ant.file.Laivanupotus-impl" value="/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/nbproject/build-impl.xml" />
+    <property name="jnlp.signing.keystore" value="" />
     <property name="libs.testng.src" value="" />
     <property name="libs.ojec-ant-utils.src" value="" />
     <property name="libs.spring-webmvc3.0.src" value="" />
     <property name="libs.restapi.classpath" value="/opt/netbeans-7.2/enterprise/modules/ext/rest/jsr311-api-1.1.1.jar" />
-    <property name="file.reference.emma.jar" value="/cs/fs/home/anttkari/.netbeans/7.2/modules/ext/emma.jar" />
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
     <property name="libs.jaxb.maven-pom" value="" />
     <property name="os.arch" value="amd64" />
@@ -66,9 +66,10 @@
     <property name="manifest.available+main.class" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Pelilogiikka.LaivaTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/test/results/TEST-Pelilogiikka.LaivaTest.xml crashfile=/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/junitvmwatcher550048978896975756.properties propsfile=/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/junit4345835944770473083.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Pelilogiikka.LaivaTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/test/results/TEST-Pelilogiikka.LaivaTest.xml crashfile=/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/junitvmwatcher353778494186627688.properties propsfile=/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/junit7363619709992901730.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
+    <property name="jnlp.descriptor" value="application" />
     <property name="libs.Java-EE-GlassFish-v3.wsjwsdp" value="" />
     <property name="build.sysclasspath" value="ignore" />
     <property name="ap.supported.internal" value="true" />
@@ -99,6 +100,7 @@
     <property name="libs.groovy-all.src" value="" />
     <property name="netbeans.dynamic.classpath" value="/opt/netbeans-7.2/platform/core/core.jar:/opt/netbeans-7.2/platform/core/org-openide-filesystems.jar:/opt/netbeans-7.2/platform/core/locale/core_pt_BR.jar:/opt/netbeans-7.2/platform/core/locale/org-openide-filesystems_pt_BR.jar:/opt/netbeans-7.2/platform/core/locale/core_ru.jar:/opt/netbeans-7.2/platform/core/locale/org-openide-filesystems_ja.jar:/opt/netbeans-7.2/platform/core/locale/core_zh_CN.jar:/opt/netbeans-7.2/platform/core/locale/org-openide-filesystems_ru.jar:/opt/netbeans-7.2/platform/core/locale/core_ja.jar:/opt/netbeans-7.2/platform/core/locale/org-openide-filesystems_zh_CN.jar:/opt/netbeans-7.2/nb/core/org-netbeans-upgrader.jar:/opt/netbeans-7.2/nb/core/locale/core_nb_ru.jar:/opt/netbeans-7.2/nb/core/locale/org-netbeans-upgrader_zh_CN.jar:/opt/netbeans-7.2/nb/core/locale/core_nb_pt_BR.jar:/opt/netbeans-7.2/nb/core/locale/core_nb.jar:/opt/netbeans-7.2/nb/core/locale/core_nb_zh_CN.jar:/opt/netbeans-7.2/nb/core/locale/org-netbeans-upgrader_pt_BR.jar:/opt/netbeans-7.2/nb/core/locale/org-netbeans-upgrader_ja.jar:/opt/netbeans-7.2/nb/core/locale/org-netbeans-upgrader_ru.jar:/opt/netbeans-7.2/nb/core/locale/core_nb_ja.jar" />
     <property name="libs.cdc-agui-swing-layout.maven-pom" value="" />
+    <property name="jnlp.enabled" value="false" />
     <property name="libs.cdc-pp-awt-layout.src" value="/opt/netbeans-7.2/mobility/sources/cdc-pp-awt-layout-src.zip" />
     <property name="java.vm.specification.version" value="1.7" />
     <property name="libs.jakarta_slide_ant_webdav.src" value="" />
@@ -110,6 +112,7 @@
     <property name="netbeans.productversion" value="NetBeans IDE 7.2 (Build 201207171143)" />
     <property name="libs.hibernate-persistence.classpath" value="/opt/netbeans-7.2/java/modules/ext/hibernate/antlr-2.7.6.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/asm.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/asm-attrs.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/cglib-2.1.3.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/commons-collections-2.1.1.jar:/opt/netbeans-7.2/ide/modules/org-apache-commons-logging.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/dom4j-1.6.1.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/ehcache-1.2.3.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/jdbc2_0-stdext.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/jta.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/hibernate3.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/hibernate-tools.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/hibernate-annotations.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/hibernate-commons-annotations.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/hibernate-entitymanager.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/javassist.jar:/opt/netbeans-7.2/java/modules/ext/hibernate/ejb3-persistence.jar" />
     <property name="libs.jaxws21.src" value="" />
+    <property name="application.title" value="Laivanupotus" />
     <property name="do.archive" value="true" />
     <property name="netbeans.autoupdate.language" value="en" />
     <property name="libs.jakarta_slide_ant_webdav.classpath" value="/opt/netbeans-7.2/mobility/modules/ext/commons-httpclient-3.0.1.jar:/opt/netbeans-7.2/ide/modules/org-apache-commons-logging.jar:/opt/netbeans-7.2/mobility/modules/ext/jdom-1.0.jar:/opt/netbeans-7.2/mobility/modules/ext/jakarta-slide-webdavlib-2.1.jar:/opt/netbeans-7.2/mobility/modules/ext/jakarta-slide-ant-webdav-2.1.jar" />
@@ -165,10 +168,11 @@
     <property name="libs.JAXB-ENDORSED.maven-pom" value="" />
     <property name="libs.spring-framework.classpath" value="/opt/netbeans-7.2/ide/modules/org-apache-commons-logging.jar:/opt/netbeans-7.2/java/modules/ext/cglib-2.2.jar:/opt/netbeans-7.2/java/modules/ext/spring/spring-2.5.6.SEC03.jar" />
     <property name="libs.eclipselink.maven-pom" value="" />
+    <property name="application.vendor" value="anttkari" />
     <property name="manifest.available" value="true" />
     <property name="libs.primefaces.javadoc" value="" />
     <property name="libs.spring-framework300.maven-pom" value="" />
-    <property name="run.test.classpath" value=":build/classes:/cs/fs/home/anttkari/.netbeans/7.2/modules/ext/junit-4.10.jar:build/test/classes:/cs/fs/home/anttkari/.netbeans/7.2/modules/ext/emma.jar" />
+    <property name="run.test.classpath" value=":build/classes:/cs/fs/home/anttkari/.netbeans/7.2/modules/ext/junit-4.10.jar:build/test/classes" />
     <property name="ant.project.invoked-targets" value="test" />
     <property name="libs.swing-layout.javadoc" value="/opt/netbeans-7.2/platform/docs/swing-layout-1.0.4-doc.zip" />
     <property name="libs.ejb3-persistence.maven-pom" value="" />
@@ -198,13 +202,15 @@
     <property name="libs.jsp-compilation.src" value="" />
     <property name="libs.spring-webmvc.src" value="" />
     <property name="libs.ant-contrib.javadoc" value="" />
-    <property name="debug.test.classpath" value=":build/classes:/cs/fs/home/anttkari/.netbeans/7.2/modules/ext/junit-4.10.jar:build/test/classes:/cs/fs/home/anttkari/.netbeans/7.2/modules/ext/emma.jar" />
+    <property name="debug.test.classpath" value=":build/classes:/cs/fs/home/anttkari/.netbeans/7.2/modules/ext/junit-4.10.jar:build/test/classes" />
     <property name="libs.javaee-endorsed-api-6.0.classpath" value="/opt/netbeans-7.2/enterprise/modules/ext/javaee6-endorsed/javax.annotation.jar:/opt/netbeans-7.2/enterprise/modules/ext/javaee6-endorsed/jaxb-api-osgi.jar:/opt/netbeans-7.2/enterprise/modules/ext/javaee6-endorsed/webservices-api-osgi.jar" />
     <property name="libs.javaee-api-6.0.src" value="" />
     <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
     <property name="ant.project.default-target" value="default" />
     <property name="annotation.processing.run.all.processors" value="true" />
     <property name="libs.savaje-ant-utils.classpath" value="/opt/netbeans-7.2/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-savaje.jar" />
+    <property name="jar.archive.disabled" value="false" />
+    <property name="jnlp.signing.alias" value="" />
     <property name="libs.PostgreSQLDriver.javadoc" value="" />
     <property name="libs.restlib.classpath" value="/opt/netbeans-7.2/enterprise/modules/ext/rest/asm-3.1.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jackson-core-asl-1.7.1.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jackson-jaxrs-1.7.1.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jackson-mapper-asl-1.7.1.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jackson-xc-1.7.1.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jersey-apache-client-1.8.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jersey-atom-abdera-1.8.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jersey-client-1.8.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jersey-core-1.8.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jersey-guice-1.8.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jersey-json-1.8.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jersey-multipart-1.8.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jersey-server-1.8.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jersey-simple-server-1.8.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jersey-spring-1.8.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/jettison-1.1.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/oauth-client-1.8.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/oauth-server-1.8.jar:/opt/netbeans-7.2/enterprise/modules/ext/rest/oauth-signature-1.8.jar:/opt/netbeans-7.2/ide/modules/ext/jaxb/activation.jar:/opt/netbeans-7.2/ide/modules/ext/jaxb/api/jaxb-api.jar:/opt/netbeans-7.2/ide/modules/ext/jaxb/api/jsr173_1.0_api.jar" />
     <property name="libs.JMUnit4CLDC11.javadoc" value="/opt/netbeans-7.2/mobility/modules/docs/jmunit-1.2.1-api.zip" />
@@ -237,6 +243,7 @@
     <property name="javac.compilerargs" value="" />
     <property name="ant.file" value="/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build.xml" />
     <property name="libs.beans-binding.maven-pom" value="" />
+    <property name="jnlp.codebase.type" value="no.codebase" />
     <property name="libs.jsf12.classpath" value="/opt/netbeans-7.2/enterprise/modules/ext/jsf-1_2/commons-beanutils.jar:/opt/netbeans-7.2/enterprise/modules/ext/jsf-1_2/commons-collections.jar:/opt/netbeans-7.2/enterprise/modules/ext/jsf-1_2/commons-digester.jar:/opt/netbeans-7.2/enterprise/modules/ext/jsf-1_2/commons-logging.jar:/opt/netbeans-7.2/enterprise/modules/ext/jsf-1_2/jsf-api.jar:/opt/netbeans-7.2/enterprise/modules/ext/jsf-1_2/jsf-impl.jar" />
     <property name="libs.restapi.maven-pom" value="" />
     <property name="libs.beans-binding.src" value="" />
@@ -248,9 +255,10 @@
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM" />
     <property name="netbeans.user" value="/cs/fs/home/anttkari/.netbeans/7.2" />
     <property name="javadoc.additionalparam" value="" />
+    <property name="jnlp.offline-allowed" value="false" />
     <property name="java.io.tmpdir" value="/tmp" />
     <property name="java.vendor.url" value="http://java.oracle.com/" />
-    <property name="endorsed.classpath.cmd.line.arg" value="-Xbootclasspath/p:&apos;/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/${endorsed.classpath}&apos;" />
+    <property name="endorsed.classpath.cmd.line.arg" value="" />
     <property name="junit.available" value="true" />
     <property name="libs.jsp-compiler.src" value="" />
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64" />
@@ -263,6 +271,7 @@
     <property name="meta.inf.dir" value="src/META-INF" />
     <property name="javadoc.encoding.used" value="UTF-8" />
     <property name="dist.jar" value="dist/Laivanupotus.jar" />
+    <property name="netbeans.automatic.build" value="true" />
     <property name="java.runtime.name" value="OpenJDK Runtime Environment" />
     <property name="ant.project.name" value="Laivanupotus" />
     <property name="netbeans.hash.code" value="unique=09e7abd41-06c6-43cf-9a6e-6fa7ea809f02_8a671056-7993-4f77-8998-1e8844f9b5f0" />
@@ -282,20 +291,21 @@
     <property name="libs.JWSAntTasks.src" value="" />
     <property name="jar.index" value="false" />
     <property name="libs.CopyLibs.maven-pom" value="" />
-    <property name="libs.spring-framework300.javadoc" value="" />
     <property name="libs.hibernate-persistence.maven-pom" value="" />
+    <property name="libs.spring-framework300.javadoc" value="" />
     <property name="libs.absolutelayout.javadoc" value="" />
     <property name="java.specification.name" value="Java Platform API Specification" />
     <property name="libs.jakarta_slide_ant_webdav.maven-pom" value="" />
     <property name="do.archive+main.class.available" value="true" />
     <property name="libs.sjmc-ant-utils.src" value="" />
+    <property name="jnlp.mixed.code" value="default" />
     <property name="java.specification.vendor" value="Oracle Corporation" />
     <property name="libs.cdc-agui-swing-layout.javadoc" value="" />
     <property name="libs.javac-api.classpath" value="/opt/netbeans-7.2/java/modules/ext/nb-javac-api.jar" />
-    <property name="java.version" value="1.7.0_07" />
     <property name="libs.nokiaS80-ant-utils.classpath" value="/opt/netbeans-7.2/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-nokiaS80.jar" />
-    <property name="javadoc.version" value="false" />
+    <property name="java.version" value="1.7.0_07" />
     <property name="run.jvmargs.ide" value="" />
+    <property name="javadoc.version" value="false" />
     <property name="libs.MySQLDriver.javadoc" value="" />
     <property name="org.openide.version" value="deprecated" />
     <property name="libs.restlib_gfv3ee6.maven-pom" value="" />
@@ -333,7 +343,7 @@
     <property name="user.country.format" value="FI" />
     <property name="libs.ojec-ant-utils.classpath" value="/opt/netbeans-7.2/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-ojec.jar" />
     <property name="libs.spring-framework.maven-pom" value="" />
-    <property name="sun.boot.class.path" value="/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/${endorsed.classpath}:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/netx.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/plugin.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rhino.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/classes" />
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/netx.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/plugin.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rhino.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-7-openjdk-amd64/jre/classes" />
     <property name="javac.target" value="1.7" />
     <property name="built-jar.properties" value="/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
@@ -355,48 +365,50 @@
     <property name="libs.groovy-all.javadoc" value="" />
     <property name="do.archive+manifest.available+main.class" value="true" />
     <property name="testng.debug.mode" value="" />
-    <property name="javac.fork" value="false" />
     <property name="libs.groovy-all.classpath" value="/opt/netbeans-7.2/groovy/modules/ext/groovy-all.jar" />
     <property name="libs.sjmc-ant-utils.classpath" value="/opt/netbeans-7.2/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-sjmc.jar" />
+    <property name="javac.fork" value="false" />
     <property name="libs.JMUnit4CLDC10.classpath" value="/opt/netbeans-7.2/mobility/modules/ext/jmunit4cldc10-1.2.1.jar" />
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
     <property name="default.javac.source" value="1.7" />
     <property name="debug-transport-by-os" value="dt_socket" />
-    <property name="sun.jnu.encoding" value="UTF-8" />
     <property name="libs.MySQLDriver.src" value="" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
     <property name="libs.ant-contrib.maven-pom" value="" />
     <property name="libs.nokiadeployment.javadoc" value="" />
     <property name="build.test.results.dir" value="build/test/results" />
     <property name="java.runtime.version" value="1.7.0_07-b30" />
     <property name="libs.ejb3-persistence.javadoc" value="" />
+    <property name="libs.sjmc-ant-utils.javadoc" value="" />
     <property name="jna.platform.library.path" value="/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu:/lib64:/usr/lib:/lib" />
     <property name="manifest.available+main.class+mkdist.available" value="true" />
-    <property name="libs.sjmc-ant-utils.javadoc" value="" />
     <property name="default.javac.target" value="1.7" />
     <property name="libs.Java-EE-GlassFish-v3.src" value="" />
     <property name="libs.junit_4.classpath" value="/cs/fs/home/anttkari/.netbeans/7.2/modules/ext/junit-4.10.jar" />
     <property name="user.timezone" value="" />
     <property name="nb.junit.single" value="false" />
-    <property name="libs.ant-contrib.src" value="" />
+    <property name="do.jar" value="true" />
     <property name="libs.javaee-endorsed-api-6.0.maven-pom" value="" />
+    <property name="libs.ant-contrib.src" value="" />
     <property name="netbeans.dirs" value="/opt/netbeans-7.2/nb:/opt/netbeans-7.2/ergonomics:/opt/netbeans-7.2/ide:/opt/netbeans-7.2/java:/opt/netbeans-7.2/apisupport:/opt/netbeans-7.2/webcommon:/opt/netbeans-7.2/websvccommon:/opt/netbeans-7.2/enterprise:/opt/netbeans-7.2/mobility:/opt/netbeans-7.2/profiler:/opt/netbeans-7.2/python:/opt/netbeans-7.2/php:/opt/netbeans-7.2/identity:/opt/netbeans-7.2/harness:/opt/netbeans-7.2/cnd:/opt/netbeans-7.2/dlight:/opt/netbeans-7.2/groovy:/opt/netbeans-7.2/extra:/opt/netbeans-7.2/javacard:/opt/netbeans-7.2/javafx:" />
     <property name="libs.jsf20.javadoc" value="/opt/netbeans-7.2/enterprise/docs/javaee6-doc-api.zip" />
     <property name="libs.restlib_gfv3ee6.src" value="" />
     <property name="java.ext.dirs" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext" />
     <property name="libs.metro.src" value="" />
-    <property name="libs.savaje-ant-utils.maven-pom" value="" />
+    <property name="endorsed.classpath" value="" />
     <property name="libs.semc-ant-utils.src" value="" />
+    <property name="libs.savaje-ant-utils.maven-pom" value="" />
     <property name="libs.absolutelayout.classpath" value="/opt/netbeans-7.2/java/modules/ext/AbsoluteLayout.jar" />
     <property name="excludes" value="" />
-    <property name="libs.restlib.maven-pom" value="" />
     <property name="libs.metro.classpath" value="/opt/netbeans-7.2/ide/modules/ext/jaxb/activation.jar:/opt/netbeans-7.2/enterprise/modules/ext/metro/webservices-api.jar:/opt/netbeans-7.2/enterprise/modules/ext/metro/webservices-extra-api.jar:/opt/netbeans-7.2/enterprise/modules/ext/metro/webservices-extra.jar:/opt/netbeans-7.2/enterprise/modules/ext/metro/webservices-rt.jar:/opt/netbeans-7.2/enterprise/modules/ext/metro/webservices-tools.jar" />
+    <property name="libs.restlib.maven-pom" value="" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
-    <property name="java.class.path" value="/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/classes:/cs/fs/home/anttkari/.netbeans/7.2/modules/ext/junit-4.10.jar:/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/test/classes:/cs/fs/home/anttkari/.netbeans/7.2/modules/ext/emma.jar:/opt/netbeans-7.2/java/ant/lib/ant-launcher.jar:/opt/netbeans-7.2/java/ant/lib/ant.jar:/opt/netbeans-7.2/java/ant/lib/ant-junit.jar:/opt/netbeans-7.2/java/ant/lib/ant-junit4.jar" />
+    <property name="java.class.path" value="/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/classes:/cs/fs/home/anttkari/.netbeans/7.2/modules/ext/junit-4.10.jar:/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/test/classes:/opt/netbeans-7.2/java/ant/lib/ant-launcher.jar:/opt/netbeans-7.2/java/ant/lib/ant.jar:/opt/netbeans-7.2/java/ant/lib/ant-junit.jar:/opt/netbeans-7.2/java/ant/lib/ant-junit4.jar" />
     <property name="do.mkdist" value="true" />
     <property name="libs.absolutelayout.src" value="" />
     <property name="libs.jpa20-persistence.classpath" value="/opt/netbeans-7.2/java/modules/ext/eclipselink/javax.persistence-2.0.3.jar" />
     <property name="libs.cdc-pp-awt-layout.maven-pom" value="" />
-    <property name="os.version" value="3.2.0-30-generic" />
+    <property name="os.version" value="3.2.0-31-generic" />
     <property name="application.args" value="" />
     <property name="libs.EclipseLink-GlassFish-v3.javadoc" value="/opt/netbeans-7.0.1/enterprise/docs/javaee6-doc-api.zip" />
     <property name="libs.JMUnit4CLDC11.maven-pom" value="" />
@@ -407,15 +419,15 @@
     <property name="libs.restlib.javadoc" value="/opt/netbeans-7.2/enterprise/docs/jersey-1.8-javadoc.zip:/opt/netbeans-7.2/enterprise/docs/jersey-apache-client-1.8-javadoc.zip:/opt/netbeans-7.2/enterprise/docs/jersey-atom-abdera-1.8-javadoc.zip:/opt/netbeans-7.2/enterprise/docs/jersey-guice-1.8-javadoc.zip:/opt/netbeans-7.2/enterprise/docs/jersey-multipart-1.8-javadoc.zip:/opt/netbeans-7.2/enterprise/docs/jersey-simple-server-1.8-javadoc.zip:/opt/netbeans-7.2/enterprise/docs/jersey-spring-1.8-javadoc.zip:/opt/netbeans-7.2/enterprise/docs/oauth-client-1.8-javadoc.zip:/opt/netbeans-7.2/enterprise/docs/oauth-server-1.8-javadoc.zip:/opt/netbeans-7.2/enterprise/docs/oauth-signature-1.8-javadoc.zip" />
     <property name="libs.JAXB-ENDORSED.classpath" value="/opt/netbeans-7.2/ide/modules/ext/jaxb/api/jaxb-api.jar" />
     <property name="libs.eclipselink.classpath" value="/opt/netbeans-7.2/java/modules/ext/eclipselink/eclipselink-2.3.2.jar:/opt/netbeans-7.2/java/modules/ext/eclipselink/javax.persistence-2.0.3.jar:/opt/netbeans-7.2/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.jpql_1.0.1.jar" />
-    <property name="libs.beans-binding.javadoc" value="/opt/netbeans-7.2/java/docs/beansbinding-1.2.1-doc.zip" />
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
+    <property name="libs.beans-binding.javadoc" value="/opt/netbeans-7.2/java/docs/beansbinding-1.2.1-doc.zip" />
     <property name="libs.Java-EE-GlassFish-v3.classpath" value="/opt/glassfish-3.1.1/glassfish/modules/jersey-core.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.ejb.jar:/opt/glassfish-3.1.1/glassfish/modules/endorsed/javax.annotation.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.jms.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.servlet.jsp.jstl.jar:/opt/glassfish-3.1.1/glassfish/modules/endorsed/webservices-api-osgi.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.security.jacc.jar:/opt/glassfish-3.1.1/glassfish/modules/endorsed/jaxb-api-osgi.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.management.j2ee.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.enterprise.deploy.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.persistence.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.security.auth.message.jar:/opt/glassfish-3.1.1/glassfish/modules/jstl-impl.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.servlet.jsp.jar:/opt/glassfish-3.1.1/glassfish/modules/jsf-impl.jar:/opt/glassfish-3.1.1/glassfish/modules/jaxrpc-api-osgi.jar:/opt/glassfish-3.1.1/glassfish/modules/jsf-api.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.mail.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.transaction.jar:/opt/glassfish-3.1.1/glassfish/modules/bean-validator.jar:/opt/glassfish-3.1.1/glassfish/modules/jaxr-api-osgi.jar:/opt/glassfish-3.1.1/glassfish/modules/weld-osgi-bundle.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.resource.jar:/opt/glassfish-3.1.1/glassfish/modules/javax.servlet.jar:/opt/glassfish-3.1.1/glassfish/modules/web-core.jar:/opt/glassfish-3.1.1/glassfish/modules/jackson-core-asl.jar:/opt/glassfish-3.1.1/glassfish/modules/jackson-jaxrs.jar:/opt/glassfish-3.1.1/glassfish/modules/jackson-mapper-asl.jar:/opt/glassfish-3.1.1/glassfish/modules/jersey-client.jar:/opt/glassfish-3.1.1/glassfish/modules/jersey-core.jar:/opt/glassfish-3.1.1/glassfish/modules/jersey-gf-server.jar:/opt/glassfish-3.1.1/glassfish/modules/jersey-json.jar:/opt/glassfish-3.1.1/glassfish/modules/jersey-multipart.jar:/opt/glassfish-3.1.1/glassfish/modules/jettison.jar:/opt/glassfish-3.1.1/glassfish/modules/mimepull.jar" />
     <property name="java.vm.vendor" value="Oracle Corporation" />
     <property name="libs.CopyLibs.classpath" value="/opt/netbeans-7.2/java/ant/extra/org-netbeans-modules-java-j2seproject-copylibstask.jar" />
     <property name="libs.spring-framework300.classpath" value="/opt/netbeans-7.2/ide/modules/org-apache-commons-logging.jar:/opt/netbeans-7.2/java/modules/ext/cglib-2.2.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-aop-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-asm-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-aspects-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-beans-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-context-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-context-support-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-core-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-expression-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-instrument-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-instrument-tomcat-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-jdbc-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-jms-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-orm-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-oxm-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-test-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-tx-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-web-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-webmvc-portlet-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-webmvc-3.1.1.RELEASE.jar:/opt/netbeans-7.2/java/modules/ext/spring-3.0/spring-struts-3.1.1.RELEASE.jar" />
     <property name="libs.jsp-compiler.maven-pom" value="" />
-    <property name="libs.spring-webmvc.maven-pom" value="" />
     <property name="libs.Java-EE-GlassFish-v3.wsinterop" value="" />
+    <property name="libs.spring-webmvc.maven-pom" value="" />
     <property name="run.jvmargs" value="" />
     <property name="libs.ejb3-persistence.classpath" value="/opt/netbeans-7.2/java/modules/ext/hibernate/ejb3-persistence.jar" />
     <property name="libs.JAXB-ENDORSED.src" value="" />
@@ -423,50 +435,28 @@
     <property name="libs.testng.javadoc" value="/opt/netbeans-7.2/platform/docs/testng-6.5.1-javadoc.zip" />
     <property name="libs.PostgreSQLDriver.classpath" value="/opt/netbeans-7.2/ide/modules/ext/postgresql-9.1-901.jdbc4.jar" />
     <property name="libs.jsf12.maven-pom" value="" />
+    <property name="jnlp.signing" value="" />
     <property name="libs.junit.src" value="" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
+    <property name="jnlp.signed" value="false" />
     <property name="main.class" value="Pelilogiikka.Laivanupotus" />
     <property name="libs.CopyLibs.src" value="" />
     <property name="build.dir" value="build" />
     <property name="libs.jsp-compilation.classpath" value="/opt/netbeans-7.2/java/ant/lib/ant.jar:/opt/netbeans-7.2/enterprise/modules/ext/servlet3.0-jsp2.2-api.jar:/opt/netbeans-7.2/enterprise/modules/ext/glassfish-jspparser-3.0.jar:/opt/netbeans-7.2/enterprise/modules/ext/jsf-2_1/jsf-api.jar:/opt/netbeans-7.2/enterprise/modules/ext/jstl.jar:/opt/netbeans-7.2/java/ant/lib/ant-launcher.jar" />
     <property name="ant.version" value="Apache Ant(TM) version 1.8.3 compiled on February 26 2012" />
-    <property name="file.encoding" value="UTF-8" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
+    <property name="file.encoding" value="UTF-8" />
     <property name="jdkBug6558476" value="false" />
     <property name="javadoc.nonavbar" value="false" />
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
   </properties>
-  <testcase classname="Pelilogiikka.LaivaTest" name="onkoPituusOikea" time="0.012">
-    <error message="Expecting a stackmap frame at branch target 11 in method Pelilogiikka.Laiva.&lt;init&gt;(Ljava/lang/String;IIIII)V at offset 4" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 11 in method Pelilogiikka.Laiva.&lt;init&gt;(Ljava/lang/String;IIIII)V at offset 4
-	at Pelilogiikka.LaivaTest.setUp(LaivaTest.java:40)
-</error>
-  </testcase>
-  <testcase classname="Pelilogiikka.LaivaTest" name="uppoaakoAlus" time="0.003">
-    <error message="Expecting a stackmap frame at branch target 11 in method Pelilogiikka.Laiva.&lt;init&gt;(Ljava/lang/String;IIIII)V at offset 4" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 11 in method Pelilogiikka.Laiva.&lt;init&gt;(Ljava/lang/String;IIIII)V at offset 4
-	at Pelilogiikka.LaivaTest.setUp(LaivaTest.java:40)
-</error>
-  </testcase>
-  <testcase classname="Pelilogiikka.LaivaTest" name="kirjaantuukoOsumat" time="0.003">
-    <error message="Expecting a stackmap frame at branch target 11 in method Pelilogiikka.Laiva.&lt;init&gt;(Ljava/lang/String;IIIII)V at offset 4" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 11 in method Pelilogiikka.Laiva.&lt;init&gt;(Ljava/lang/String;IIIII)V at offset 4
-	at Pelilogiikka.LaivaTest.setUp(LaivaTest.java:40)
-</error>
-  </testcase>
-  <testcase classname="Pelilogiikka.LaivaTest" name="onkoPystyssa" time="0.003">
-    <error message="Expecting a stackmap frame at branch target 11 in method Pelilogiikka.Laiva.&lt;init&gt;(Ljava/lang/String;IIIII)V at offset 4" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 11 in method Pelilogiikka.Laiva.&lt;init&gt;(Ljava/lang/String;IIIII)V at offset 4
-	at Pelilogiikka.LaivaTest.setUp(LaivaTest.java:40)
-</error>
-  </testcase>
-  <testcase classname="Pelilogiikka.LaivaTest" name="onkoOikein" time="0.002">
-    <error message="Expecting a stackmap frame at branch target 11 in method Pelilogiikka.Laiva.&lt;init&gt;(Ljava/lang/String;IIIII)V at offset 4" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 11 in method Pelilogiikka.Laiva.&lt;init&gt;(Ljava/lang/String;IIIII)V at offset 4
-	at Pelilogiikka.LaivaTest.setUp(LaivaTest.java:40)
-</error>
-  </testcase>
-  <testcase classname="Pelilogiikka.LaivaTest" name="onkoVaakasuorassa" time="0.002">
-    <error message="Expecting a stackmap frame at branch target 11 in method Pelilogiikka.Laiva.&lt;init&gt;(Ljava/lang/String;IIIII)V at offset 4" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 11 in method Pelilogiikka.Laiva.&lt;init&gt;(Ljava/lang/String;IIIII)V at offset 4
-	at Pelilogiikka.LaivaTest.setUp(LaivaTest.java:40)
-</error>
-  </testcase>
+  <testcase classname="Pelilogiikka.LaivaTest" name="onkoPituusOikea" time="0.003" />
+  <testcase classname="Pelilogiikka.LaivaTest" name="kirjaantuukoOsumat" time="0.0" />
+  <testcase classname="Pelilogiikka.LaivaTest" name="uppoaakoAlus" time="0.0" />
+  <testcase classname="Pelilogiikka.LaivaTest" name="onkoPystyssa" time="0.001" />
+  <testcase classname="Pelilogiikka.LaivaTest" name="onkoVaakasuorassa" time="0.0" />
+  <testcase classname="Pelilogiikka.LaivaTest" name="onkoOikein" time="0.001" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

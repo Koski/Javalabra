@@ -21,6 +21,11 @@ public class Pelilauta {
         generator = new Random();
     }
 
+    /**
+     * Luo jokaiseen pelilaudan kohtaan Nappulaolion ja alustaa nappulat niin
+     * että mihinkään ei ole osuttu eikä missään ole laivaa. Koordinaatit ovat
+     * välillä 0-9.
+     */
     public void alustaLauta() {
         for (int i = 0; i < korkeus; i++) {
             for (int j = 0; j < leveys; j++) {
@@ -29,10 +34,14 @@ public class Pelilauta {
         }
     }
 
+    public int getLaukaustenMaara() {
+        return laukaustenMaara;
+    }
+
     public List<Laiva> getLaivalista() {
         return laivalista;
     }
-    
+
     public Nappula[][] getLauta() {
         return lauta;
     }
@@ -45,6 +54,13 @@ public class Pelilauta {
         return leveys;
     }
 
+    /**
+     * Antaa palautteena nappulan, jolla on annetut koordinaatit
+     *
+     * @param x käyttäjän antama syöte, x-koordinaatti
+     * @param y käyttäjän antama syöte, y-koordinaatti
+     * @return koordinaatteja vastaava nappula
+     */
     public Nappula getNappula(int x, int y) {
         Nappula palaute = null;
         if (osuikoTauluun(x, y)) {
@@ -59,10 +75,17 @@ public class Pelilauta {
         return palaute;
     }
 
+    /**
+     * Asettaa annetun nappulan "osuttu" parametriin true. Jos kohdassa oli
+     * laiva, kasvatetaan kyseisen laivan osumien lukumäärää Laukausten määrää
+     * myös kasvatetaan aina tulituksessa
+     *
+     * @param nappula käyttäjän antama syöte
+     */
     public void tulitus(Nappula nappula) {
         if (osuikoTauluun(nappula.xKoord, nappula.yKoord) && nappula.getLaiva() != null) {
             nappula.setOsuttu(true);
-            nappula.getLaiva().osumienLkm++;
+            nappula.getLaiva().laivaanOsui();
             laukaustenMaara++;
         } else {
             nappula.setOsuttu(true);
@@ -84,14 +107,14 @@ public class Pelilauta {
             }
             System.out.println("");
         }
-    }
-
-    public void tulostaOsumat() {
-        System.out.println("   0 1 2 3 4 5 6 7 8 9\n"
+    }                                                   //Ylä- ja alapuolella olevat tulostusmetodit ovat
+                                                        //vain Mainin testausta ja tekstikäyttöliittymää
+    public void tulostaOsumat() {                      //varten. En siirtänyt niitä pois, koska ne käyttävät
+        System.out.println("   0 1 2 3 4 5 6 7 8 9\n"    // muutamaa luokan privaattia metodia.
                 + "   ___________________");
-        for (int i = 0; i < korkeus; i++) {
+        for (int i = 0; i < getKorkeus(); i++) {
             System.out.print(i + " |");
-            for (int j = 0; j < leveys; j++) {
+            for (int j = 0; j < getLeveys(); j++) {
                 if (kohdassaOnLaivaJaKohtaanOnOsuttu(i, j)) {
                     System.out.print("* ");
                 } else if (kohdassaEiOleLaivaaJaKohtaanOnOsuttu(i, j)) {
@@ -104,6 +127,12 @@ public class Pelilauta {
         }
     }
 
+    /**
+     * Kertoo onko kaikki pelilaudan laivat uponneet
+     *
+     * @return palauttaa true jos kaikki laivat ovat uponneet ja falsen jos
+     * yksikin laiva on edes osittain "hengissä".
+     */
     public boolean loppuikoPeli() {
         int uponneet = 0;
         for (Laiva laiva : laivalista) {
@@ -118,6 +147,12 @@ public class Pelilauta {
         }
     }
 
+    /**
+     * Asettaa annetun laivan omiin koordinaatteihinsa laudalle sekä lisää
+     * laivan listaan, jossa pidetään kirjaa kaikista laivoista
+     *
+     * @param laiva käyttäjän antama syöte
+     */
     public void laivanAsetus(Laiva laiva) {
 
         if (laiva.onkoVaaka()) {
@@ -172,14 +207,38 @@ public class Pelilauta {
         }
     }
 
+    /**
+     * Tarkistaa pysyvätkö annetut parametrit, siis koordinaatit, pelilaudan
+     * rajoissa
+     *
+     * @param x käyttäjän antama syöte, x-koordinaatti
+     * @param y käyttäjän antama syöte, y-koordinaatti
+     * @return Palauttee true, jos koordinaatit mahtuvat laudalle ja muutoin
+     * falsen
+     */
     public boolean osuikoTauluun(int x, int y) {
         return x >= 0 && x < korkeus && y >= 0 && y < leveys;
     }
 
+    /**
+     * Antaa pelaajan pisteet, mitä enemmän laukauksia, sitä huonommat pisteet.
+     * Jokainen laukaus vähentää 100 pistettä. Maksimipisteet riippuvat siis laivojen
+     * määrästä.
+     *
+     * @return
+     */
     public int pisteet() {
         return 10000 - laukaustenMaara * 100;
     }
 
+    /**
+     * Arpoo laivalle satunnaiset alku- ja loppukoordinaatit. Laivan suunta, eli
+     * pysty tai vaaka, on myös satunnainen. Koko ja tyyppi määritellään itse.
+     *
+     * @param koko käyttäjän antama syöte
+     * @param tyyppi käyttäjän antama syöte
+     * @return palauttaa arvotun laivan.
+     */
     public Laiva satunnainenLaiva(int koko, String tyyppi) {
         int luku = generator.nextInt(2);
         if (luku == 0) {
@@ -201,10 +260,71 @@ public class Pelilauta {
         }
         return satunnaisLaiva;
     }
+    /**
+     * Luo satunnaisen kahden ruudun pituisen laivan, jonka
+     * tyyppi on tiedustelija. Jatkaa arpomista niin kauan, kunnes
+     * löytää sellaisen joka käy pelikenttään.
+     * @return palauttaa luodun laivan.
+     */
+    public Laiva luoTiedustelija() {
+        Laiva palaute = satunnainenLaiva(2, "Tiedustelija");
+        while (!kaykoLaiva(palaute)) {
+            palaute = satunnainenLaiva(2, "Tiedustelija");
+        }
+        return palaute;
+    }
+    /**
+     * Luo satunnaisen kolmen ruudun pituisen laivan, jonka
+     * tyyppi on miinalautta. Jatkaa arpomista niin kauan, kunnes
+     * löytää sellaisen joka käy pelikenttään.
+     * @return palauttaa luodun laivan.
+     */
+    public Laiva luoMiinalautta() {
+        Laiva palaute = satunnainenLaiva(3, "Miinalautta");
+        while (!kaykoLaiva(palaute)) {
+            palaute = satunnainenLaiva(3, "Miinalautta");
+        }
+        return palaute;
+    }
+    /**
+     * Luo satunnaisen neljän ruudun pituisen laivan, jonka
+     * tyyppi on ohjusvene. Jatkaa arpomista niin kauan, kunnes
+     * löytää sellaisen joka käy pelikenttään.
+     * @return palauttaa luodun laivan.
+     */
+    public Laiva luoOhjusvene() {
+        Laiva palaute = satunnainenLaiva(4, "Ohjusvene");
+        while (!kaykoLaiva(palaute)) {
+            palaute = satunnainenLaiva(4, "Ohjusvene");
+        }
+        return palaute;
+    }
+    /**
+     * Luo satunnaisen viiden ruudun pituisen laivan, jonka
+     * tyyppi on emoalus. Jatkaa arpomista niin kauan, kunnes
+     * löytää sellaisen joka käy pelikenttään.
+     * @return palauttaa luodun laivan.
+     */
+    public Laiva luoEmoalus() {
+        Laiva palaute = satunnainenLaiva(5, "Emoalus");
+        while (!kaykoLaiva(palaute)) {
+            palaute = satunnainenLaiva(5, "Emoalus");
+        }
+        return palaute;
 
+    }
+
+    /**
+     * Selvittää, käykö syötteenä saatu laiva peli- laudalle. Laivat eivät saa
+     * olla kiinni toisissaan sivusta tai päistä, kulmat saavat olla vierekkäin.
+     *
+     * @param laiva käyttäjän antama syöte
+     * @return palauttaa true, jos kyseinen laiva sopii laudalle ja false, jos
+     * laiva ei sovi.
+     */
     public boolean kaykoLaiva(Laiva laiva) {
         boolean palaute = true;
-        if (laiva.onkoPystyssa()) {
+        if (laiva.onkoPystyssa() && laiva.onkoLaivaOikein()) {
             if (pystyLaivanPaissaToinenLaiva(laiva)) {
                 palaute = false;
             }
@@ -213,7 +333,7 @@ public class Pelilauta {
                     palaute = false;
                 }
             }
-        } else {
+        } else if (laiva.onkoVaaka() && laiva.onkoLaivaOikein()) {
             if (vaakalaivanPaissaToinenLaiva(laiva)) {
                 palaute = false;
             }

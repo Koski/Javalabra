@@ -4,7 +4,10 @@
  */
 package Pelilogiikka;
 
-public class Nappula {
+import java.awt.Color;
+import javax.swing.JButton;
+
+public class Nappula extends JButton{
     
     Laiva laiva;
     boolean osuttu;
@@ -49,5 +52,26 @@ public class Nappula {
     public boolean isOsuttu() {
         return osuttu;
     }
-    
+    /**
+     * Vaihtaa nappulan taustan vaaleansiniseksi (vesi).
+     */
+    public void vaihdaSiniseksi(){
+        setBackground(Color.CYAN.darker());
+    }
+    /**
+     * Vaihtaa nappulan taustan punaiseksi (kuvaa osuttua laivaa).
+     */
+    public void vaihdaOsutuksiLaivaksi() {
+        if (isOsuttu() && getLaiva()!=null) {
+            setBackground(Color.red);
+        }
+    }
+    /**
+     * Vaihtaa nappulan taustan mustaksi (kuvaa ohiammuttua kohtaa).
+     */
+    public void vaihdaOhiLaukaukseksi() {
+        if (isOsuttu()) {
+            setBackground(Color.BLACK);
+        }
+    }
 }
