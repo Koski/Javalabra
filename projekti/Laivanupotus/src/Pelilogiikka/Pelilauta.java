@@ -86,6 +86,9 @@ public class Pelilauta {
         if (osuikoTauluun(nappula.xKoord, nappula.yKoord) && nappula.getLaiva() != null) {
             nappula.setOsuttu(true);
             nappula.getLaiva().laivaanOsui();
+            if (nappula.getLaiva().onkoUponnut()) {
+                laivalista.remove(nappula.getLaiva());
+            }
             laukaustenMaara++;
         } else {
             nappula.setOsuttu(true);

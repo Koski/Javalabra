@@ -31,15 +31,13 @@ public class KlikkaustenKuuntelija implements ActionListener {
             kayttoliittyma.getLauta().tulitus(nappi);
             kayttoliittyma.paivita();
             nappi.setEnabled(false);
-            
-            if (nappi.getLaiva() != null && nappi.getLaiva().onkoUponnut() && !kayttoliittyma.getLauta().loppuikoPeli()) {               
+            kayttoliittyma.asetaAlaTeksti("Jäljellä olevat laivat:\n" + kayttoliittyma.laivat());
+            if (nappi.getLaiva() != null && nappi.getLaiva().onkoUponnut() && !kayttoliittyma.getLauta().loppuikoPeli()) {
                 kayttoliittyma.asetaYlaTeksti(nappi.getLaiva().getTyyppi() + " upposi");
             }
             if (kayttoliittyma.getLauta().loppuikoPeli()) {
                 kayttoliittyma.asetaYlaTeksti(nappi.getLaiva().getTyyppi() + " upposi ja peli loppui! Pisteesi: " + kayttoliittyma.getLauta().pisteet());
             }
-        } 
-            
-        
+        }
     }
 }

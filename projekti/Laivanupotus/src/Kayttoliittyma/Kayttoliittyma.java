@@ -55,7 +55,7 @@ public class Kayttoliittyma implements Runnable {
     @Override
     public void run() {
         frame = new JFrame("Laivanupotus");
-        frame.setPreferredSize(new Dimension(800, 800));
+        frame.setPreferredSize(new Dimension(1000, 800));
         luoKomponentit(frame);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,7 +74,7 @@ public class Kayttoliittyma implements Runnable {
         for (int i = 0; i <= lauta.getKorkeus(); i++) {
             for (int j = 0; j <= lauta.getLeveys(); j++) {
                 if (i == 0 && j == 0) {
-                    JLabel label = new JLabel(new ImageIcon("merkkarilippu.jpeg"));
+                    JLabel label = new JLabel(new ImageIcon("/kuvat/merkkarilippu.jpeg"));
                     paneeli.add(label);
                 } else if (i == 0) {
                     JTextArea area = new JTextArea((char) ('A' - 1 + j) + "");
@@ -83,9 +83,6 @@ public class Kayttoliittyma implements Runnable {
                 } else if (j == 0) {
                     JTextArea area = new JTextArea(i + "");
                     paneeli.add(area);
-//                } else if (i == 11) {
-//                    JTextArea area = new JTextArea(viesti);
-//                    paneeli.add(area);
                 } else {
                     Nappula nappi = new Nappula(null, false, i - 1, j - 1);
                     lauta.getLauta()[i - 1][j - 1] = nappi;
@@ -103,13 +100,18 @@ public class Kayttoliittyma implements Runnable {
         lauta.laivanAsetus(lauta.luoTiedustelija());
 
         container.add(paneeli);
+
+        boldi = new Font("fontti", 10, 20);
         
-        boldi = new Font("fontti",10,30);
         ylaTeksti = new JTextArea();
         ylaTeksti.setFont(boldi);
         ylaTeksti.setSize(100, 100);
         ylaTeksti.setEditable(false);
         alaTeksti = new JTextArea();
+        alaTeksti.setEditable(false);
+        alaTeksti.setFont(boldi);
+        alaTeksti.setText("Jäljellä olevat laivat:\n" + laivat());
+        
         container.add(ylaTeksti, BorderLayout.SOUTH);
         container.add(alaTeksti, BorderLayout.EAST);
 
@@ -136,5 +138,17 @@ public class Kayttoliittyma implements Runnable {
 
     public void asetaYlaTeksti(String teksti) {
         this.ylaTeksti.setText(teksti);
+    }
+
+    public void asetaAlaTeksti(String teksti) {
+        this.alaTeksti.setText(teksti);
+    }
+
+    public String laivat() {
+        String palaute = "\n";
+        for (Laiva laiva : lauta.getLaivalista()) {
+            palaute = palaute + laiva.getTyyppi() + " (" + laiva.getKoko() + ") " + "\n";
+        }
+        return palaute;
     }
 }
