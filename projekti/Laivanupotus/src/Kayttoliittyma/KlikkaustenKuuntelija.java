@@ -8,6 +8,9 @@ import Pelilogiikka.Nappula;
 import Pelilogiikka.Pelilauta;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 
 /**
@@ -36,7 +39,15 @@ public class KlikkaustenKuuntelija implements ActionListener {
                 kayttoliittyma.asetaYlaTeksti(nappi.getLaiva().getTyyppi() + " upposi");
             }
             if (kayttoliittyma.getLauta().loppuikoPeli()) {
-                kayttoliittyma.asetaYlaTeksti(nappi.getLaiva().getTyyppi() + " upposi ja peli loppui! Pisteesi: " + kayttoliittyma.getLauta().pisteet());
+                kayttoliittyma.asetaYlaTeksti(nappi.getLaiva().getTyyppi()
+                        + " upposi ja peli loppui! Pisteesi: " + kayttoliittyma.getLauta().pisteet());
+                try {
+                    kayttoliittyma.lataaTiedostosta();
+                    kayttoliittyma.lisaaNimiJaPisteet();
+                    kayttoliittyma.kirjoitaTiedostoon();
+                } catch (IOException ex) {
+                    Logger.getLogger(KlikkaustenKuuntelija.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
     }

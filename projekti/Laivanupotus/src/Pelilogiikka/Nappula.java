@@ -5,20 +5,58 @@
 package Pelilogiikka;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
-
-public class Nappula extends JButton{
-    
-    Laiva laiva;
-    boolean osuttu;
-    int xKoord;
-    int yKoord;
-
+/**
+ * Nappulat sijaitsevat pelilaudalla ja kuvaavat yhtä kohtaa. Nappulalla on omat
+ * koordinaatit, tieto siitä onko nappulaan ammuttu ja viite siihen laivaan, joka
+ * on kyseisessä koordinaatissa, jos ylipäätään on.
+ * @author anttkari
+ */
+public class Nappula extends JButton {
+    /**
+     * kuva osutusta laivan kohdasta, räjähdys.
+     */
+    private ImageIcon osumaKuva = new ImageIcon("/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/src/Kuvat/wham.jpg");
+    /**
+     * kuva ohiammutusta laivan kohdasta, kuvana on ruksi.
+     */
+    private ImageIcon ohikuva = new ImageIcon("/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/src/Kuvat/ruksi.jpeg");
+    /**
+     * Väri tehty kuvaamaan kirkasta vettä.
+     */
+    private Color vaaleanSininen = new Color(51,204,255);
+    /**
+     * Nappulalla on viite siihen laivaan, joka sijaitsee nappulan
+     * kohdassa, jos sijaitsee.
+     */
+    private Laiva laiva;
+    /**
+     * Pitää kirjaa siitä, onko nappulaan vielä ammuttu (eli osuttu), riippumatta
+     * siitä onko kohdassa laivaa vai ei.
+     */
+    private boolean osuttu;
+    /**
+     * Nappulan sijaintia kuvaava X-koordinaatti.
+     */
+    private int xKoord;
+    /**
+     * Nappulan sijaintia kuvaava Y-koordinaatti.
+     */
+    private int yKoord;
+    /**
+     * Luo nappulan, jolla on kayttajan antamat arvot.
+     * @param laiva
+     * @param osuttu
+     * @param xKoord
+     * @param yKoord 
+     */
     public Nappula(Laiva laiva, boolean osuttu, int xKoord, int yKoord) {
         this.laiva = laiva;
         this.osuttu = osuttu;
         this.xKoord = xKoord;
         this.yKoord = yKoord;
+
     }
 
     public void setxKoord(int xKoord) {
@@ -52,26 +90,31 @@ public class Nappula extends JButton{
     public boolean isOsuttu() {
         return osuttu;
     }
+
     /**
      * Vaihtaa nappulan taustan vaaleansiniseksi (vesi).
      */
-    public void vaihdaSiniseksi(){
-        setBackground(Color.CYAN.darker());
+    public void vaihdaSiniseksi() {
+        setBackground(vaaleanSininen);
     }
+
     /**
-     * Vaihtaa nappulan taustan punaiseksi (kuvaa osuttua laivaa).
+     * Vaihtaa nappulan kuvan räjähdykseksi (kuvaa osuttua laivaa).
      */
     public void vaihdaOsutuksiLaivaksi() {
-        if (isOsuttu() && getLaiva()!=null) {
-            setBackground(Color.red);
+        if (isOsuttu() && getLaiva() != null) {
+            this.setIcon(osumaKuva);
+            this.setDisabledIcon(osumaKuva);
         }
     }
+
     /**
-     * Vaihtaa nappulan taustan mustaksi (kuvaa ohiammuttua kohtaa).
+     * Vaihtaa nappulan kuvan ruksiksi (kuvaa ohiammuttua kohtaa).
      */
     public void vaihdaOhiLaukaukseksi() {
         if (isOsuttu()) {
-            setBackground(Color.BLACK);
+           this.setIcon(ohikuva);
+           this.setDisabledIcon(ohikuva);
         }
     }
 }

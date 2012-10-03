@@ -3,18 +3,48 @@ package Pelilogiikka;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+/**
+ * Pelilaudalla on laivoja, joita pyritään tuhoamaan. Lauta
+ * pitää kirjaa siinä sijaitsevista laivoista ja poistaa niitä
+ * sitä mukaan kun ne tuhoutuvat.
+ * @author anttkari
+ */
 public class Pelilauta {
-
-    Nappula nappula;
-    Nappula[][] lauta;
-    int korkeus = 10;
-    int leveys = 10;
-    List<Laiva> laivalista;
-    int laukaustenMaara = 0;
-    Laiva satunnaisLaiva = null;
-    Random generator;
-
+    /**
+     * Matriisi, joka sisältää Nappula olioita, joilla on tiedot
+     * koordinaateista, laivoista ja osumisesta.
+     */
+    private Nappula[][] lauta;
+    /**
+     * Pelilaudan korkeus.
+     */
+    private int korkeus = 10;
+    /**
+     * Pelilaudan leveys.
+     */
+    private int leveys = 10;
+    /**
+     * Lista laivoista, jotka ovat laudalla.
+     */
+    private List<Laiva> laivalista;
+    /**
+     * Muuttujaan kirjataan +1 aina kun lautaa tulitetaan, osui
+     * se laivaan tai ei.
+     */
+    private int laukaustenMaara = 0;
+    /**
+     * Kenttä satunnaisten laivojen luontia varten.
+     */
+    private Laiva satunnaisLaiva = null;
+    /**
+     * Satunnaisten lukujen generoimista varten käytetty olio
+     * (satunnaiset laivat).
+     */
+    private Random generator;
+    /**
+     * Luo 10x10 kokoisen pelilaudan (tässä tapauksessa), alustaa
+     * tyhjän laivalistan ja satunnaislukuja generoivan olion.
+     */
     public Pelilauta() {
         lauta = new Nappula[korkeus][leveys];
         laivalista = new ArrayList<Laiva>();
@@ -83,7 +113,7 @@ public class Pelilauta {
      * @param nappula käyttäjän antama syöte
      */
     public void tulitus(Nappula nappula) {
-        if (osuikoTauluun(nappula.xKoord, nappula.yKoord) && nappula.getLaiva() != null) {
+        if (osuikoTauluun(nappula.getxKoord(), nappula.getyKoord()) && nappula.getLaiva() != null) {
             nappula.setOsuttu(true);
             nappula.getLaiva().laivaanOsui();
             if (nappula.getLaiva().onkoUponnut()) {
@@ -95,7 +125,10 @@ public class Pelilauta {
             laukaustenMaara++;
         }
     }
-
+    /**
+     * Tekstikäyttöliittymää varten tehty tulostusmetodi,
+     * ei relevantti ohjelman suorituksen kannalta.
+     */
     public void tulostaLaivat() {
         for (int i = 0; i < korkeus; i++) {
 
@@ -110,10 +143,13 @@ public class Pelilauta {
             }
             System.out.println("");
         }
-    }                                                   //Ylä- ja alapuolella olevat tulostusmetodit ovat
-                                                        //vain Mainin testausta ja tekstikäyttöliittymää
-    public void tulostaOsumat() {                      //varten. En siirtänyt niitä pois, koska ne käyttävät
-        System.out.println("   0 1 2 3 4 5 6 7 8 9\n"    // muutamaa luokan privaattia metodia.
+    }                                                   
+    /**    
+     * Tekstikäyttöliittymää ja logiikan testausta tehty tulostusmetodi,
+     * ei relevantti ohjelman suorituksen kannalta.
+     */                                                  
+    public void tulostaOsumat() {                      
+        System.out.println("   0 1 2 3 4 5 6 7 8 9\n"   
                 + "   ___________________");
         for (int i = 0; i < getKorkeus(); i++) {
             System.out.print(i + " |");
@@ -170,45 +206,7 @@ public class Pelilauta {
         }
     }
 
-    private void vaakaLaivaPienempiEka(Laiva laiva) {
-        if (laiva.alkuY < laiva.loppuY) {
-            int luku = laiva.alkuY;
-            while (luku <= laiva.loppuY) {
-                lauta[laiva.alkuX][luku].setLaiva(laiva);
-                luku++;
-            }
-        }
-    }
-
-    private void vaakaLaivaIsompiEka(Laiva laiva) {
-        if (laiva.alkuY > laiva.loppuY) {
-            int luku = laiva.alkuY;
-            while (luku >= laiva.loppuY) {
-                lauta[laiva.alkuX][luku].setLaiva(laiva);
-                luku--;
-            }
-        }
-    }
-
-    private void pystyLaivaPienempiEka(Laiva laiva) {
-        if (laiva.alkuX < laiva.loppuX) {
-            int luku = laiva.alkuX;
-            while (luku <= laiva.loppuX) {
-                lauta[luku][laiva.alkuY].setLaiva(laiva);
-                luku++;
-            }
-        }
-    }
-
-    private void pystyLaivaIsompiEka(Laiva laiva) {
-        if (laiva.alkuX > laiva.loppuX) {
-            int luku = laiva.alkuX;
-            while (luku >= laiva.loppuX) {
-                lauta[luku][laiva.alkuY].setLaiva(laiva);
-                luku--;
-            }
-        }
-    }
+    
 
     /**
      * Tarkistaa pysyvätkö annetut parametrit, siis koordinaatit, pelilaudan
@@ -340,7 +338,7 @@ public class Pelilauta {
             if (vaakalaivanPaissaToinenLaiva(laiva)) {
                 palaute = false;
             }
-            for (int i = laiva.alkuY; i <= laiva.loppuY; i++) {
+            for (int i = laiva.getAlkuY(); i <= laiva.getLoppuY(); i++) {
                 if (vaakalaivanTilallaTaiYllaTaiAllaOnLaiva(laiva, i)) {
                     palaute = false;
                 }
@@ -354,7 +352,7 @@ public class Pelilauta {
     }
 
     private boolean onkoPystylaivanAlapuolellaLaivaa(Laiva laiva) {
-        return lauta[laiva.getLoppuX() + 1][laiva.loppuY].getLaiva() != null;
+        return lauta[laiva.getLoppuX() + 1][laiva.getLoppuY()].getLaiva() != null;
     }
 
     private boolean onkoPystylaivanOikeallaLaivaa(int i, Laiva laiva) {
@@ -370,23 +368,23 @@ public class Pelilauta {
     }
 
     private boolean onkoVaakalaivanOikeallaLaivaa(Laiva laiva) {
-        return lauta[laiva.loppuX][laiva.getLoppuY() + 1].getLaiva() != null;
+        return lauta[laiva.getLoppuX()][laiva.getLoppuY() + 1].getLaiva() != null;
     }
 
     private boolean onkoVaakalaivanAllaLaivaa(Laiva laiva, int i) {
-        return lauta[laiva.alkuX - 1][i].getLaiva() != null;
+        return lauta[laiva.getAlkuX() - 1][i].getLaiva() != null;
     }
 
     private boolean onkoVaakaLaivanYllaLaivaa(Laiva laiva, int i) {
-        return lauta[laiva.alkuX + 1][i].getLaiva() != null;
+        return lauta[laiva.getAlkuX() + 1][i].getLaiva() != null;
     }
 
     private boolean onkoLaivanTilallaJoLaiva(Laiva laiva, int i) {
-        return lauta[laiva.alkuX][i].getLaiva() != null;
+        return lauta[laiva.getAlkuX()][i].getLaiva() != null;
     }
 
     private boolean onkoPystylaivanTilallaJoLaivaa(int i, Laiva laiva) {
-        return lauta[i][laiva.alkuY].getLaiva() != null;
+        return lauta[i][laiva.getAlkuY()].getLaiva() != null;
     }
 
     private boolean kohdassaOnLaivaJaKohtaanOnOsuttu(int i, int j) {
@@ -398,18 +396,57 @@ public class Pelilauta {
     }
 
     private boolean pystyLaivanPaissaToinenLaiva(Laiva laiva) {
-        return osuikoTauluun(laiva.getAlkuX() - 1, laiva.alkuY) && onkoPystylaivanYlapuolellaLaivaa(laiva) || osuikoTauluun(laiva.getLoppuX() + 1, laiva.loppuY) && onkoPystylaivanAlapuolellaLaivaa(laiva);
+        return osuikoTauluun(laiva.getAlkuX() - 1, laiva.getAlkuY()) && onkoPystylaivanYlapuolellaLaivaa(laiva) || osuikoTauluun(laiva.getLoppuX() + 1, laiva.getLoppuY()) && onkoPystylaivanAlapuolellaLaivaa(laiva);
     }
 
     private boolean pystylaivanTilallaTaiYllaTaiAllaOnLaiva(int i, Laiva laiva) {
-        return osuikoTauluun(i, laiva.getAlkuY() + 1) && onkoPystylaivanOikeallaLaivaa(i, laiva) || osuikoTauluun(i, laiva.alkuY - 1) && onkoPystylaivanVasemmallaLaivaa(i, laiva) || onkoPystylaivanTilallaJoLaivaa(i, laiva);
+        return osuikoTauluun(i, laiva.getAlkuY() + 1) && onkoPystylaivanOikeallaLaivaa(i, laiva) || osuikoTauluun(i, laiva.getAlkuY() - 1) && onkoPystylaivanVasemmallaLaivaa(i, laiva) || onkoPystylaivanTilallaJoLaivaa(i, laiva);
     }
 
     private boolean vaakalaivanPaissaToinenLaiva(Laiva laiva) {
-        return osuikoTauluun(laiva.alkuX, laiva.getAlkuY() - 1) && onkoVaakalaivanVasemmallaLaivaa(laiva) || osuikoTauluun(laiva.loppuX, laiva.getLoppuY() + 1) && onkoVaakalaivanOikeallaLaivaa(laiva);
+        return osuikoTauluun(laiva.getAlkuX(), laiva.getAlkuY() - 1) && onkoVaakalaivanVasemmallaLaivaa(laiva) || osuikoTauluun(laiva.getLoppuX(), laiva.getLoppuY() + 1) && onkoVaakalaivanOikeallaLaivaa(laiva);
     }
 
     private boolean vaakalaivanTilallaTaiYllaTaiAllaOnLaiva(Laiva laiva, int i) {
-        return osuikoTauluun(laiva.alkuX - 1, i) && onkoVaakalaivanAllaLaivaa(laiva, i) || osuikoTauluun(laiva.alkuX + 1, i) && onkoVaakaLaivanYllaLaivaa(laiva, i) || onkoLaivanTilallaJoLaiva(laiva, i);
+        return osuikoTauluun(laiva.getAlkuX() - 1, i) && onkoVaakalaivanAllaLaivaa(laiva, i) || osuikoTauluun(laiva.getAlkuX() + 1, i) && onkoVaakaLaivanYllaLaivaa(laiva, i) || onkoLaivanTilallaJoLaiva(laiva, i);
+    }
+    private void vaakaLaivaPienempiEka(Laiva laiva) {
+        if (laiva.getAlkuY() < laiva.getLoppuY()) {
+            int luku = laiva.getAlkuY();
+            while (luku <= laiva.getLoppuY()) {
+                lauta[laiva.getAlkuX()][luku].setLaiva(laiva);
+                luku++;
+            }
+        }
+    }
+
+    private void vaakaLaivaIsompiEka(Laiva laiva) {
+        if (laiva.getAlkuY() > laiva.getLoppuY()) {
+            int luku = laiva.getAlkuY();
+            while (luku >= laiva.getLoppuY()) {
+                lauta[laiva.getAlkuX()][luku].setLaiva(laiva);
+                luku--;
+            }
+        }
+    }
+
+    private void pystyLaivaPienempiEka(Laiva laiva) {
+        if (laiva.getAlkuX() < laiva.getLoppuX()) {
+            int luku = laiva.getAlkuX();
+            while (luku <= laiva.getLoppuX()) {
+                lauta[luku][laiva.getAlkuY()].setLaiva(laiva);
+                luku++;
+            }
+        }
+    }
+
+    private void pystyLaivaIsompiEka(Laiva laiva) {
+        if (laiva.getAlkuX() > laiva.getLoppuX()) {
+            int luku = laiva.getAlkuX();
+            while (luku >= laiva.getLoppuX()) {
+                lauta[luku][laiva.getAlkuY()].setLaiva(laiva);
+                luku--;
+            }
+        }
     }
 }

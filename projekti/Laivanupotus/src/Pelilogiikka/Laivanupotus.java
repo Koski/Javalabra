@@ -2,7 +2,11 @@ package Pelilogiikka;
 
 import java.util.Random;
 import java.util.Scanner;
-
+/**
+ * Tämä luokka on tehty alkupäässä toimintalogiikan testaamista
+ * varten. Ohjelman suorituksen kannalta turha.
+ * @author anttkari
+ */
 public class Laivanupotus {
 
     /**
@@ -50,15 +54,15 @@ public class Laivanupotus {
 //        lauta.laivanAsetus(lauta.satunnainenLaiva(3, "Miinalautta"));
 //        lauta.laivanAsetus(lauta.satunnainenLaiva(3, "Miinalautta"));
 //        lauta.laivanAsetus(lauta.satunnainenLaiva(5, "Emoalus"));
-        for (int i = 3; i < 6; i++) {
-            Laiva random;
-            random = lauta.satunnainenLaiva(i, "js");
-            while(lauta.kaykoLaiva(random)==false) {
-                random = lauta.satunnainenLaiva(i, "js");
-            }
-            lauta.laivanAsetus(random);
-        }
-        lauta.tulostaLaivat();
+//        for (int i = 3; i < 6; i++) {
+//            Laiva random;
+//            random = lauta.satunnainenLaiva(i, "js");
+//            while(lauta.kaykoLaiva(random)==false) {
+//                random = lauta.satunnainenLaiva(i, "js");
+//            }
+//            lauta.laivanAsetus(random);
+//        }
+//        lauta.tulostaLaivat();
 //        System.out.println(lauta.vasenLaitaTarkistus(miinalautta));
     }
 }

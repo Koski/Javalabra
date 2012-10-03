@@ -1,8 +1,18 @@
 package Pelilogiikka;
-
+/**
+ * Pelaaja luokka määrittelee eri nimiset pelaajat
+ * ja sitoo pelaajan saamat pisteet hänen nimeensä.
+ * @author anttkari
+ */
 public class Pelaaja {
-    String nimi;
-    int pisteet;
+    /**
+     * Pelaajan nimi / nicki.
+     */
+    private String nimi;
+    /**
+     * Pelaajan saavuttamat pisteet pelin aikana.
+     */
+    private int pisteet;
 
     public Pelaaja(String nimi) {
         this.nimi=nimi;

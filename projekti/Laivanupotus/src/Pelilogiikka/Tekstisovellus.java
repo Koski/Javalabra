@@ -7,7 +7,9 @@ package Pelilogiikka;
 import java.util.Scanner;
 
 /**
- *
+ *Tein syötevirtaa hyväksikäyttävän tekstikäyttöliittymän,
+ *kun huomasin omaavani tarpeeksi toimivaa toimintalogiikkaa
+ *sen totutusta varten.
  * @author anttkari
  */
 public class Tekstisovellus {
