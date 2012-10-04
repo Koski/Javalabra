@@ -226,7 +226,7 @@ public class Pelilauta {
      * Jokainen laukaus vähentää 100 pistettä. Maksimipisteet riippuvat siis laivojen
      * määrästä.
      *
-     * @return
+     * @return pisteet riipuen laukausten maarasta.
      */
     public int pisteet() {
         return 10000 - laukaustenMaara * 100;
@@ -262,57 +262,19 @@ public class Pelilauta {
         return satunnaisLaiva;
     }
     /**
-     * Luo satunnaisen kahden ruudun pituisen laivan, jonka
-     * tyyppi on tiedustelija. Jatkaa arpomista niin kauan, kunnes
-     * löytää sellaisen joka käy pelikenttään.
-     * @return palauttaa luodun laivan.
+     * Luo satunnaisen laivan ja tarkistaa meneekö se kenttään sovituilla
+     * säännöillä, jos ei mene, niin luo uusia laivoja niin kauan että
+     * luotu laiva menee kenttään.
+     * @param koko käyttäjän antama syöte
+     * @param tyyppi käyttäjän antama syöte
+     * @return satunnainen laiva joka käy kenttään.
      */
-    public Laiva luoTiedustelija() {
-        Laiva palaute = satunnainenLaiva(2, "Tiedustelija");
+    public Laiva luoSatunnainenLaiva(int koko, String tyyppi) {
+        Laiva palaute = satunnainenLaiva(koko, tyyppi);
         while (!kaykoLaiva(palaute)) {
-            palaute = satunnainenLaiva(2, "Tiedustelija");
+            palaute = satunnainenLaiva(koko, tyyppi);
         }
         return palaute;
-    }
-    /**
-     * Luo satunnaisen kolmen ruudun pituisen laivan, jonka
-     * tyyppi on miinalautta. Jatkaa arpomista niin kauan, kunnes
-     * löytää sellaisen joka käy pelikenttään.
-     * @return palauttaa luodun laivan.
-     */
-    public Laiva luoMiinalautta() {
-        Laiva palaute = satunnainenLaiva(3, "Miinalautta");
-        while (!kaykoLaiva(palaute)) {
-            palaute = satunnainenLaiva(3, "Miinalautta");
-        }
-        return palaute;
-    }
-    /**
-     * Luo satunnaisen neljän ruudun pituisen laivan, jonka
-     * tyyppi on ohjusvene. Jatkaa arpomista niin kauan, kunnes
-     * löytää sellaisen joka käy pelikenttään.
-     * @return palauttaa luodun laivan.
-     */
-    public Laiva luoOhjusvene() {
-        Laiva palaute = satunnainenLaiva(4, "Ohjusvene");
-        while (!kaykoLaiva(palaute)) {
-            palaute = satunnainenLaiva(4, "Ohjusvene");
-        }
-        return palaute;
-    }
-    /**
-     * Luo satunnaisen viiden ruudun pituisen laivan, jonka
-     * tyyppi on emoalus. Jatkaa arpomista niin kauan, kunnes
-     * löytää sellaisen joka käy pelikenttään.
-     * @return palauttaa luodun laivan.
-     */
-    public Laiva luoEmoalus() {
-        Laiva palaute = satunnainenLaiva(5, "Emoalus");
-        while (!kaykoLaiva(palaute)) {
-            palaute = satunnainenLaiva(5, "Emoalus");
-        }
-        return palaute;
-
     }
 
     /**

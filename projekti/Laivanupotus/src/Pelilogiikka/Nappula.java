@@ -17,11 +17,11 @@ public class Nappula extends JButton {
     /**
      * kuva osutusta laivan kohdasta, räjähdys.
      */
-    private ImageIcon osumaKuva = new ImageIcon("/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/src/Kuvat/wham.jpg");
+    private ImageIcon osumaKuva = new ImageIcon("/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/src/Kuvat/Wham.jpeg");
     /**
-     * kuva ohiammutusta laivan kohdasta, kuvana on ruksi.
+     * kuva ohiammutusta laivan kohdasta, kuvana on OHI teksti.
      */
-    private ImageIcon ohikuva = new ImageIcon("/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/src/Kuvat/ruksi.jpeg");
+    private ImageIcon ohikuva = new ImageIcon("/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/src/Kuvat/OHI.jpg");
     /**
      * Väri tehty kuvaamaan kirkasta vettä.
      */

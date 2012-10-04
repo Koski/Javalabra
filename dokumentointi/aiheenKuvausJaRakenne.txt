@@ -1,27 +1,21 @@
 ﻿Laivanupotus
 
 
-Toteutetaan kahden pelaajan versio laivanupotuksesta. Laivan upotuksessa pelikenttä on 2-ulotteinen ruudukko,
-luultavasti 10x10. Pelissä sijoitellaan oma laivasto paikalleen, jonka jälkeen niitä ei enää saa liikutella. Vastustajan
-laivoja koitetaan tulittaa arvaamalla niiden paikkoja vuorotellen. Peli päättyy kun toisen laivasto on tuhoutunut
-kokonaan. Pisteitä saa sen mukaan, kuinka monta laukausta on käyttänyt tuhoamiseen (vähemmillä yrityksillä enemmän
-pisteitä)
+Toteutetaan yksinpeliversio laivanupotuksesta. Laivan upotuksessa pelikenttä on 2-ulotteinen ruudukko,
+yleensä 10x10. Pelissä tietokone sijoittelee sattumanvaraisesti laivat, jonka jälkeen ne eivät enää liiku. Laivoja koitetaan tulittaa arvaamalla niiden paikkoja. Laivat eivät voi olla vierekkäin, mutta laivojen kulmat voivat koskettaa. Peli päättyy kun koko laivasto on tuhoutunut. Pisteitä saa sen mukaan, kuinka monta laukausta on käyttänyt tuhoamiseen (vähemmillä yrityksillä enemmän pisteitä)
 
 
 Pelin kulku:
-        -1. pelaaja syöttää nimensä
-        -2. pelaaja syöttää nimensä
-        -1. pelaaja sijoittelee laivansa vaaka tai pystysuoraan. Laivat eivät voi olla päällekkäin
-        -2. pelaaja sijoittelee laivansa
-        - varsinainen peliosuus alkaa, 1. pelaaja aloittaa pelin valitsemalla ruudun         (tulituskohteen)
-        - osuessaan vastapelaajan laivaan, osunut pelaaja saa jatkaa tulitusta. Muuten vuoro vaihtuu toiselle
-        - Peli loppuu kun toisen laivasto on tuhoutunut
+         - pelaaja syöttää nimensä
+         - tietokone arpoo laivat (tämä vaihe ei oikeastaan näy mitenkään)
+        - varsinainen peliosuus alkaa, pelaaja aloittaa pelin valitsemalla ruudun (tulituskohteen)
+        - Peli loppuu kun laivasto on tuhoutunut
 
 
 Pelaajien toiminnot:
 	- Nimen syöttö
-	- Laivojen sijoitus, onnistuu jos laitettu oikein eli vain vaaka tai pystysuoraan
 	- Tulitus
+	-Top5 tarkastelu
 
 Ohjelma kirjaa pelaajien pisteitä tekstitiedostoon ja näyttää ne parhuusjärjestyksessä. Tilastoa voi tarkastella
-alkuvalikosta
+kesken peliä tai sen jälkeen.

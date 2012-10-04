@@ -157,11 +157,11 @@ public class Kayttoliittyma implements Runnable {
             }
         }
 
-        lauta.laivanAsetus(lauta.luoEmoalus());
-        lauta.laivanAsetus(lauta.luoMiinalautta());
-        lauta.laivanAsetus(lauta.luoMiinalautta());
-        lauta.laivanAsetus(lauta.luoOhjusvene());
-        lauta.laivanAsetus(lauta.luoTiedustelija());
+        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(5, "Emoalus"));
+        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(3, "Miinalautta"));
+        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(3, "Miinalautta"));
+        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(4, "Ohjusvene"));
+        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(2, "Tiedustelija"));
 
         container.add(paneeli);
 
@@ -313,7 +313,6 @@ public class Kayttoliittyma implements Runnable {
     }
 
     private static void ilmoita(String viesti) {
-        JOptionPane.showMessageDialog(null,
-                viesti, "", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(null, viesti, "", JOptionPane.PLAIN_MESSAGE);
     }
 }
