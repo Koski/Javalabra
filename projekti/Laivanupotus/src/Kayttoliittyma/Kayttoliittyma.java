@@ -115,7 +115,7 @@ public class Kayttoliittyma implements Runnable {
         nappi.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                pelaaja.setNimi(nimikentta.getText());
+                pelaaja.setNimi(nimikentta.getText().replaceAll(" ", "_"));
                 luoPelialusta(frame);
             }
         });
@@ -135,7 +135,7 @@ public class Kayttoliittyma implements Runnable {
         for (int i = 0; i <= lauta.getKorkeus(); i++) {
             for (int j = 0; j <= lauta.getLeveys(); j++) {
                 if (i == 0 && j == 0) {
-                    JLabel label = new JLabel(lippu);
+                    JLabel label = new JLabel();
                     paneeli.add(label);
                 } else if (i == 0) {
                     JTextArea area = new JTextArea((char) ('A' - 1 + j) + "");
@@ -267,7 +267,7 @@ public class Kayttoliittyma implements Runnable {
     }
 
     private String getTervehdysJaOhjeet() {
-        return "Tervetuloa pelaaman laivanupotusta!\n\n"
+        return "\n\n\n\nTervetuloa pelaaman laivanupotusta!\n\n"
                 + "Syötä nimesi tai nickisi ylläolevaan kenttään.\n"
                 + "Tietokone arpoo sinulle 5 laivaa pelikentälle. "
                 + "Laivojen sivut eivät voi olla vierekkäin, mutta\n"

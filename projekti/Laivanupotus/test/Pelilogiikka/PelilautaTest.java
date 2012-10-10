@@ -66,6 +66,7 @@ public class PelilautaTest {
     public void asettuukoLaivaLaudalle() {
         lauta.laivanAsetus(testilaiva);
         int luku=0;
+        
         for (int i = 0; i < lauta.getKorkeus(); i++) {
             for (int j = 0; j < lauta.getLeveys(); j++) {
                 if (nappulat[i][j].getLaiva()!=null) {
@@ -154,6 +155,10 @@ public class PelilautaTest {
         lauta.tulitus(lauta.getNappula(3, 1));
         assertFalse(lauta.loppuikoPeli());
     }
-
+    @Test
+    public void luodaankoSatunnainenLaivaOikein() {
+        Laiva ohjusvene = lauta.luoSatunnainenLaiva(4, "ohjusvene");
+        assertTrue(lauta.kaykoLaiva(ohjusvene));
+    }
     
 }

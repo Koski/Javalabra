@@ -109,7 +109,7 @@ public class Nappula extends JButton {
     }
 
     /**
-     * Vaihtaa nappulan kuvan ruksiksi (kuvaa ohiammuttua kohtaa).
+     * Vaihtaa nappulan kuvan OHI tekstiksi (kuvaa ohiammuttua kohtaa).
      */
     public void vaihdaOhiLaukaukseksi() {
         if (isOsuttu()) {

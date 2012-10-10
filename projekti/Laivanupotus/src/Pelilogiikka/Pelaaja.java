@@ -33,6 +33,5 @@ public class Pelaaja {
     public int getPisteet() {
         return pisteet;
     }
-    
-    
+      
 }

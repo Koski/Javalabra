@@ -82,8 +82,11 @@ public class LaivaTest {
         assertEquals(true,emoalus.onkoLaivaOikein());
         assertEquals(false,vinoalus.onkoLaivaOikein());
     }
-
-    
-        
-    
+    @Test
+    public void kasvaakoOsumienLkmJosLaivaOnUponnut() {
+        emoalus.setOsumienLkm(emoalus.getKoko());
+        emoalus.laivaanOsui();
+        assertEquals(emoalus.getKoko(), emoalus.getOsumienLkm(),0.001);
+    }
+              
 }

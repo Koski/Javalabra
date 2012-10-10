@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="dhp-57" name="Pelilogiikka.LaivaTest" tests="7" time="0.112" timestamp="2012-10-08T10:32:04">
+<testsuite errors="0" failures="0" hostname="dhp-57" name="Pelilogiikka.NappulaTest" tests="2" time="0.204" timestamp="2012-10-08T10:32:04">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
@@ -66,7 +66,7 @@
     <property name="manifest.available+main.class" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Pelilogiikka.LaivaTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/test/results/TEST-Pelilogiikka.LaivaTest.xml crashfile=/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/junitvmwatcher5375325449449832143.properties propsfile=/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/junit3717903451595937303.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Pelilogiikka.NappulaTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/test/results/TEST-Pelilogiikka.NappulaTest.xml crashfile=/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/junitvmwatcher3729937972845248390.properties propsfile=/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/junit2545079482164709163.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="jnlp.descriptor" value="application" />
@@ -451,13 +451,8 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
   </properties>
-  <testcase classname="Pelilogiikka.LaivaTest" name="onkoPituusOikea" time="0.001" />
-  <testcase classname="Pelilogiikka.LaivaTest" name="uppoaakoAlus" time="0.0" />
-  <testcase classname="Pelilogiikka.LaivaTest" name="kirjaantuukoOsumat" time="0.001" />
-  <testcase classname="Pelilogiikka.LaivaTest" name="onkoPystyssa" time="0.0" />
-  <testcase classname="Pelilogiikka.LaivaTest" name="onkoOikein" time="0.001" />
-  <testcase classname="Pelilogiikka.LaivaTest" name="onkoVaakasuorassa" time="0.0" />
-  <testcase classname="Pelilogiikka.LaivaTest" name="kasvaakoOsumienLkmJosLaivaOnUponnut" time="0.0" />
+  <testcase classname="Pelilogiikka.NappulaTest" name="vaihtuukoTausta" time="0.124" />
+  <testcase classname="Pelilogiikka.NappulaTest" name="onkoKohdassaLaiva" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

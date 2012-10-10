@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="dhp-45" name="Pelilogiikka.PelilautaTest" tests="13" time="0.408" timestamp="2012-09-26T14:09:04">
+<testsuite errors="0" failures="0" hostname="dhp-57" name="Pelilogiikka.PelilautaTest" tests="14" time="0.458" timestamp="2012-10-08T10:32:05">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
@@ -66,7 +66,7 @@
     <property name="manifest.available+main.class" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Pelilogiikka.PelilautaTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/test/results/TEST-Pelilogiikka.PelilautaTest.xml crashfile=/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/junitvmwatcher4729463936750166591.properties propsfile=/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/junit7515812073534444551.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner Pelilogiikka.PelilautaTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/test/results/TEST-Pelilogiikka.PelilautaTest.xml crashfile=/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/junitvmwatcher1689939070629532748.properties propsfile=/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/build/junit8970364118834619343.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="jnlp.descriptor" value="application" />
@@ -451,19 +451,20 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
   </properties>
-  <testcase classname="Pelilogiikka.PelilautaTest" name="osuukoTulitus" time="0.126" />
-  <testcase classname="Pelilogiikka.PelilautaTest" name="osuukoOhiMennytTulitus" time="0.019" />
-  <testcase classname="Pelilogiikka.PelilautaTest" name="osuukoTauluun" time="0.016" />
-  <testcase classname="Pelilogiikka.PelilautaTest" name="meneekoLaivaToisenLaivanViereen" time="0.013" />
-  <testcase classname="Pelilogiikka.PelilautaTest" name="meneekoLaivaToisenLaivanKulmaan" time="0.011" />
-  <testcase classname="Pelilogiikka.PelilautaTest" name="meneekoKaksiLaivaaTaysinPaallekkain" time="0.01" />
-  <testcase classname="Pelilogiikka.PelilautaTest" name="loytyykoSatunnainenLaivaLaudalta" time="0.01" />
+  <testcase classname="Pelilogiikka.PelilautaTest" name="osuukoTulitus" time="0.146" />
+  <testcase classname="Pelilogiikka.PelilautaTest" name="osuukoOhiMennytTulitus" time="0.026" />
+  <testcase classname="Pelilogiikka.PelilautaTest" name="osuukoTauluun" time="0.018" />
+  <testcase classname="Pelilogiikka.PelilautaTest" name="meneekoLaivaToisenLaivanViereen" time="0.017" />
+  <testcase classname="Pelilogiikka.PelilautaTest" name="meneekoLaivaToisenLaivanKulmaan" time="0.015" />
+  <testcase classname="Pelilogiikka.PelilautaTest" name="meneekoKaksiLaivaaTaysinPaallekkain" time="0.015" />
+  <testcase classname="Pelilogiikka.PelilautaTest" name="loytyykoSatunnainenLaivaLaudalta" time="0.012" />
   <testcase classname="Pelilogiikka.PelilautaTest" name="saadaankoOikeaNappula" time="0.011" />
-  <testcase classname="Pelilogiikka.PelilautaTest" name="paattyykoPeliKunLaivatOnTuhottu" time="0.009" />
-  <testcase classname="Pelilogiikka.PelilautaTest" name="paattyykoPeliEnnenAikoja" time="0.01" />
+  <testcase classname="Pelilogiikka.PelilautaTest" name="paattyykoPeliKunLaivatOnTuhottu" time="0.013" />
+  <testcase classname="Pelilogiikka.PelilautaTest" name="paattyykoPeliEnnenAikoja" time="0.012" />
+  <testcase classname="Pelilogiikka.PelilautaTest" name="luodaankoSatunnainenLaivaOikein" time="0.016" />
   <testcase classname="Pelilogiikka.PelilautaTest" name="alustettuLauta" time="0.011" />
-  <testcase classname="Pelilogiikka.PelilautaTest" name="asettuukoLaivaLaudalle" time="0.01" />
-  <testcase classname="Pelilogiikka.PelilautaTest" name="lisataankoLaivatListaanKunNeAsetetaanLaudalle" time="0.014" />
+  <testcase classname="Pelilogiikka.PelilautaTest" name="asettuukoLaivaLaudalle" time="0.016" />
+  <testcase classname="Pelilogiikka.PelilautaTest" name="lisataankoLaivatListaanKunNeAsetetaanLaudalle" time="0.011" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
