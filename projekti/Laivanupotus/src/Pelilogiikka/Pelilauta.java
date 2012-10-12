@@ -3,13 +3,15 @@ package Pelilogiikka;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
 /**
- * Pelilaudalla on laivoja, joita pyritään tuhoamaan. Lauta
- * pitää kirjaa siinä sijaitsevista laivoista ja poistaa niitä
- * sitä mukaan kun ne tuhoutuvat.
+ * Pelilaudalla on laivoja, joita pyritään tuhoamaan. Lauta pitää kirjaa siinä
+ * sijaitsevista laivoista ja poistaa niitä sitä mukaan kun ne tuhoutuvat.
+ *
  * @author anttkari
  */
 public class Pelilauta {
+
     /**
      * Matriisi, joka sisältää Nappula olioita, joilla on tiedot
      * koordinaateista, laivoista ja osumisesta.
@@ -28,8 +30,8 @@ public class Pelilauta {
      */
     private List<Laiva> laivalista;
     /**
-     * Muuttujaan kirjataan +1 aina kun lautaa tulitetaan, osui
-     * se laivaan tai ei.
+     * Muuttujaan kirjataan +1 aina kun lautaa tulitetaan, osui se laivaan tai
+     * ei.
      */
     private int laukaustenMaara = 0;
     /**
@@ -37,13 +39,14 @@ public class Pelilauta {
      */
     private Laiva satunnaisLaiva = null;
     /**
-     * Satunnaisten lukujen generoimista varten käytetty olio
-     * (satunnaiset laivat).
+     * Satunnaisten lukujen generoimista varten käytetty olio (satunnaiset
+     * laivat).
      */
     private Random generator;
+
     /**
-     * Luo 10x10 kokoisen pelilaudan (tässä tapauksessa), alustaa
-     * tyhjän laivalistan ja satunnaislukuja generoivan olion.
+     * Luo 10x10 kokoisen pelilaudan (tässä tapauksessa), alustaa tyhjän
+     * laivalistan ja satunnaislukuja generoivan olion.
      */
     public Pelilauta() {
         lauta = new Nappula[korkeus][leveys];
@@ -125,9 +128,10 @@ public class Pelilauta {
             laukaustenMaara++;
         }
     }
+
     /**
-     * Tekstikäyttöliittymää varten tehty tulostusmetodi,
-     * ei relevantti ohjelman suorituksen kannalta.
+     * Tekstikäyttöliittymää varten tehty tulostusmetodi, ei relevantti ohjelman
+     * suorituksen kannalta.
      */
     public void tulostaLaivat() {
         for (int i = 0; i < korkeus; i++) {
@@ -143,13 +147,14 @@ public class Pelilauta {
             }
             System.out.println("");
         }
-    }                                                   
-    /**    
-     * Tekstikäyttöliittymää ja logiikan testausta tehty tulostusmetodi,
-     * ei relevantti ohjelman suorituksen kannalta.
-     */                                                  
-    public void tulostaOsumat() {                      
-        System.out.println("   0 1 2 3 4 5 6 7 8 9\n"   
+    }
+
+    /**
+     * Tekstikäyttöliittymää ja logiikan testausta tehty tulostusmetodi, ei
+     * relevantti ohjelman suorituksen kannalta.
+     */
+    public void tulostaOsumat() {
+        System.out.println("   0 1 2 3 4 5 6 7 8 9\n"
                 + "   ___________________");
         for (int i = 0; i < getKorkeus(); i++) {
             System.out.print(i + " |");
@@ -206,8 +211,6 @@ public class Pelilauta {
         }
     }
 
-    
-
     /**
      * Tarkistaa pysyvätkö annetut parametrit, siis koordinaatit, pelilaudan
      * rajoissa
@@ -223,8 +226,8 @@ public class Pelilauta {
 
     /**
      * Antaa pelaajan pisteet, mitä enemmän laukauksia, sitä huonommat pisteet.
-     * Jokainen laukaus vähentää 100 pistettä. Maksimipisteet riippuvat siis laivojen
-     * määrästä.
+     * Jokainen laukaus vähentää 100 pistettä. Maksimipisteet riippuvat siis
+     * laivojen määrästä.
      *
      * @return pisteet riipuen laukausten maarasta.
      */
@@ -261,10 +264,12 @@ public class Pelilauta {
         }
         return satunnaisLaiva;
     }
+
     /**
      * Luo satunnaisen laivan ja tarkistaa meneekö se kenttään sovituilla
-     * säännöillä, jos ei mene, niin luo uusia laivoja niin kauan että
-     * luotu laiva menee kenttään.
+     * säännöillä, jos ei mene, niin luo uusia laivoja niin kauan että luotu
+     * laiva menee kenttään.
+     *
      * @param koko käyttäjän antama syöte
      * @param tyyppi käyttäjän antama syöte
      * @return satunnainen laiva joka käy kenttään.
@@ -279,7 +284,8 @@ public class Pelilauta {
 
     /**
      * Selvittää, käykö syötteenä saatu laiva peli- laudalle. Laivat eivät saa
-     * olla kiinni toisissaan sivusta tai päistä, kulmat saavat olla vierekkäin.
+     * olla kiinni toisissaan sivusta tai päistä, kulmat saavat olla vierekkäin. Tarkastaa
+     * myös onko laiva itsessään sääntöjen mukainen.
      *
      * @param laiva käyttäjän antama syöte
      * @return palauttaa true, jos kyseinen laiva sopii laudalle ja false, jos
@@ -358,20 +364,27 @@ public class Pelilauta {
     }
 
     private boolean pystyLaivanPaissaToinenLaiva(Laiva laiva) {
-        return osuikoTauluun(laiva.getAlkuX() - 1, laiva.getAlkuY()) && onkoPystylaivanYlapuolellaLaivaa(laiva) || osuikoTauluun(laiva.getLoppuX() + 1, laiva.getLoppuY()) && onkoPystylaivanAlapuolellaLaivaa(laiva);
+        return osuikoTauluun(laiva.getAlkuX() - 1, laiva.getAlkuY()) && onkoPystylaivanYlapuolellaLaivaa(laiva)
+                || osuikoTauluun(laiva.getLoppuX() + 1, laiva.getLoppuY()) && onkoPystylaivanAlapuolellaLaivaa(laiva);
     }
 
     private boolean pystylaivanTilallaTaiYllaTaiAllaOnLaiva(int i, Laiva laiva) {
-        return osuikoTauluun(i, laiva.getAlkuY() + 1) && onkoPystylaivanOikeallaLaivaa(i, laiva) || osuikoTauluun(i, laiva.getAlkuY() - 1) && onkoPystylaivanVasemmallaLaivaa(i, laiva) || onkoPystylaivanTilallaJoLaivaa(i, laiva);
+        return osuikoTauluun(i, laiva.getAlkuY() + 1) && onkoPystylaivanOikeallaLaivaa(i, laiva)
+                || osuikoTauluun(i, laiva.getAlkuY() - 1) && onkoPystylaivanVasemmallaLaivaa(i, laiva)
+                || onkoPystylaivanTilallaJoLaivaa(i, laiva);
     }
 
     private boolean vaakalaivanPaissaToinenLaiva(Laiva laiva) {
-        return osuikoTauluun(laiva.getAlkuX(), laiva.getAlkuY() - 1) && onkoVaakalaivanVasemmallaLaivaa(laiva) || osuikoTauluun(laiva.getLoppuX(), laiva.getLoppuY() + 1) && onkoVaakalaivanOikeallaLaivaa(laiva);
+        return osuikoTauluun(laiva.getAlkuX(), laiva.getAlkuY() - 1) && onkoVaakalaivanVasemmallaLaivaa(laiva)
+                || osuikoTauluun(laiva.getLoppuX(), laiva.getLoppuY() + 1) && onkoVaakalaivanOikeallaLaivaa(laiva);
     }
 
     private boolean vaakalaivanTilallaTaiYllaTaiAllaOnLaiva(Laiva laiva, int i) {
-        return osuikoTauluun(laiva.getAlkuX() - 1, i) && onkoVaakalaivanAllaLaivaa(laiva, i) || osuikoTauluun(laiva.getAlkuX() + 1, i) && onkoVaakaLaivanYllaLaivaa(laiva, i) || onkoLaivanTilallaJoLaiva(laiva, i);
+        return osuikoTauluun(laiva.getAlkuX() - 1, i) && onkoVaakalaivanAllaLaivaa(laiva, i)
+                || osuikoTauluun(laiva.getAlkuX() + 1, i) && onkoVaakaLaivanYllaLaivaa(laiva, i)
+                || onkoLaivanTilallaJoLaiva(laiva, i);
     }
+
     private void vaakaLaivaPienempiEka(Laiva laiva) {
         if (laiva.getAlkuY() < laiva.getLoppuY()) {
             int luku = laiva.getAlkuY();

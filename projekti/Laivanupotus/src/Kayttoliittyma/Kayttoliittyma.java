@@ -11,6 +11,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.HeadlessException;
 import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,6 +24,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -42,8 +44,8 @@ public class Kayttoliittyma implements Runnable {
     private JFrame frame;
     private Pelilauta lauta;
     private String viesti;
-    private JTextArea ylaTeksti;
-    private JTextArea alaTeksti;
+    private JTextArea ilmoituskentta;
+    private JTextArea laivatilasto;
     private Font boldi;
     private ImageIcon lippu = new ImageIcon("/cs/fs/home/anttkari/NetBeansProjects/Laivanupotus/src/Kuvat/merggari2.jpeg");
     private Pelaaja pelaaja;
@@ -55,7 +57,7 @@ public class Kayttoliittyma implements Runnable {
     private Scanner lukija;
 
     public Kayttoliittyma() throws IOException {
-        this("pena");
+        this("");
     }
 
     public Kayttoliittyma(String nimi) {
@@ -80,14 +82,7 @@ public class Kayttoliittyma implements Runnable {
 
     @Override
     public void run() {
-        frame = new JFrame("Laivanupotus");
-        frame.setPreferredSize(new Dimension(1000, 800));
-        luoAlkuikkuna(frame);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-        frame.pack();
-        frame.setVisible(true);
-
+        uusiIkkuna();
     }
 
     public void luoAlkuikkuna(Container container) {
@@ -97,103 +92,44 @@ public class Kayttoliittyma implements Runnable {
         nimipaneeli.setLayout(layout);
 
         nimikentta = new JTextField();
-        nimikentta.setEditable(true);
-        nimikentta.setFont(boldi);
-
         JTextArea ohjeet = new JTextArea(getTervehdysJaOhjeet());
-        ohjeet.setFont(boldi);
+        asetaKenttiinFonttiJaEditable(ohjeet);
 
-        JButton nappi = new JButton("Ok");
-        nappi.setMaximumSize(new Dimension(20, 20));
+        JButton pelinappi = new JButton("Pelaamaan!");
+        asetaPelinapinToiminnallisuus(pelinappi);
 
-        nimipaneeli.add(nimikentta, BorderLayout.NORTH);
-        nimipaneeli.add(nappi, BorderLayout.SOUTH);
-        nimipaneeli.add(ohjeet, BorderLayout.CENTER);
+        asetaKentatPaneeliin(pelinappi, ohjeet);
 
         container.add(nimipaneeli);
-
-        nappi.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                pelaaja.setNimi(nimikentta.getText().replaceAll(" ", "_"));
-                luoPelialusta(frame);
-            }
-        });
-
     }
 
     public void luoPelialusta(Container container) {
 
         frame.remove(nimipaneeli);
         GridLayout layout = new GridLayout(lauta.getKorkeus() + 1, lauta.getLeveys() + 1, 2, 2);
-
+        KlikkaustenKuuntelija kuuntelija = new KlikkaustenKuuntelija(this);
         JPanel paneeli = new JPanel();
+        ilmoituskentta = new JTextArea();
+        laivatilasto = new JTextArea();
+        JButton tilastot = new JButton("Top 5");
+
         paneeli.setLayout(layout);
 
-        KlikkaustenKuuntelija kuuntelija = new KlikkaustenKuuntelija(this);
+        teeRuudut(paneeli, kuuntelija);
 
-        for (int i = 0; i <= lauta.getKorkeus(); i++) {
-            for (int j = 0; j <= lauta.getLeveys(); j++) {
-                if (i == 0 && j == 0) {
-                    JLabel label = new JLabel();
-                    paneeli.add(label);
-                } else if (i == 0) {
-                    JTextArea area = new JTextArea((char) ('A' - 1 + j) + "");
-                    area.setEditable(false);
-                    area.setFont(boldi);
-                    paneeli.add(area);
-                } else if (j == 0) {
-                    JTextArea area = new JTextArea(i + "");
-                    area.setEditable(false);
-                    area.setFont(boldi);
-                    paneeli.add(area);
-                } else {
-                    Nappula nappi = new Nappula(null, false, i - 1, j - 1);
-                    lauta.getLauta()[i - 1][j - 1] = nappi;
-                    paneeli.add(nappi);
-                    nappi.vaihdaSiniseksi();
-                    nappi.addActionListener(kuuntelija);
-                }
-            }
-        }
+        satunnaistenLaivojenAsetus();
 
-        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(5, "Emoalus"));
-        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(3, "Miinalautta"));
-        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(3, "Miinalautta"));
-        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(4, "Ohjusvene"));
-        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(2, "Tiedustelija"));
+        ilmoituskentta.setEditable(false);
+        laivatilasto.setEditable(false);
+        laivatilasto.setText(laivat());
+
+        setTilastojenTarkastelu(tilastot);
+
+        asetaTekstikenttiinFontti(tilastot);
+
+        lisaaKentatContaineriin(container, tilastot);
 
         container.add(paneeli);
-
-        JButton tilastot = new JButton("Top 5");
-        tilastot.setFont(boldi);
-
-        tilastot.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                jarjestaPisteidenMukaan();
-                try {
-                    ilmoita(topViisi());
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(Kayttoliittyma.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-
-        ylaTeksti = new JTextArea();
-        ylaTeksti.setFont(boldi);
-        ylaTeksti.setSize(100, 100);
-        ylaTeksti.setEditable(false);
-
-        alaTeksti = new JTextArea();
-        alaTeksti.setEditable(false);
-        alaTeksti.setFont(boldi);
-        alaTeksti.setText("Jäljellä olevat laivat: \n" + laivat());
-
-        container.add(tilastot, BorderLayout.NORTH);
-        container.add(ylaTeksti, BorderLayout.SOUTH);
-        container.add(alaTeksti, BorderLayout.EAST);
-
         frame.pack();
         frame.getContentPane().repaint();
     }
@@ -205,23 +141,12 @@ public class Kayttoliittyma implements Runnable {
                 lauta.getLauta()[i][j].vaihdaOsutuksiLaivaksi();
             }
         }
+        asetaLaivatilasto(laivat());
 
     }
 
-    public void asetaYlaTeksti(String teksti) {
-        this.ylaTeksti.setText(teksti);
-    }
-
-    public void asetaAlaTeksti(String teksti) {
-        this.alaTeksti.setText(teksti);
-    }
-
-    public String laivat() {
-        String palaute = "\n";
-        for (Laiva laiva : lauta.getLaivalista()) {
-            palaute = palaute + laiva.getTyyppi() + " (" + laiva.getKoko() + ") " + "\n";
-        }
-        return palaute;
+    public void asetailmoituskentta(String teksti) {
+        this.ilmoituskentta.setText(teksti);
     }
 
     public void kirjoitaTiedostoon() throws IOException {
@@ -238,9 +163,12 @@ public class Kayttoliittyma implements Runnable {
         kirjoittaja.close();
     }
 
-    public void lataaTiedostosta() throws FileNotFoundException {
-        lukija = new Scanner(tiedosto);
-
+    public void lataaTiedostosta() throws FileNotFoundException, IOException {
+        tilasto.clear();
+        if (!tiedosto.exists()) {
+            tiedosto.createNewFile();
+        }
+        lukija = new Scanner(this.tiedosto);
         try {
             lukija = new Scanner(this.tiedosto);
         } catch (Exception e) {
@@ -248,12 +176,11 @@ public class Kayttoliittyma implements Runnable {
             return;
         }
         while (lukija.hasNextLine()) {
-            Pelaaja apuPelaaja = new Pelaaja("apu");
+            Pelaaja apuPelaaja = new Pelaaja("apumuuttuja");
             String rivi = lukija.nextLine();
             String[] osat = rivi.split(" ");
-            int pisteet = Integer.parseInt(osat[1]);
             apuPelaaja.setNimi(osat[0]);
-            apuPelaaja.setPisteet(pisteet);
+            apuPelaaja.setPisteet(Integer.parseInt(osat[1]));
             tilasto.add(apuPelaaja);
         }
         lukija.close();
@@ -267,8 +194,9 @@ public class Kayttoliittyma implements Runnable {
     }
 
     private String getTervehdysJaOhjeet() {
-        return "\n\n\n\nTervetuloa pelaaman laivanupotusta!\n\n"
-                + "Syötä nimesi tai nickisi ylläolevaan kenttään.\n"
+        return "\n\n\nTervetuloa pelaaman laivanupotusta!\n\n"
+                + "Syötä nimesi tai nickisi ylläolevaan kenttään "
+                + "(oltava 1-16 merkkiä).\n"
                 + "Tietokone arpoo sinulle 5 laivaa pelikentälle. "
                 + "Laivojen sivut eivät voi olla vierekkäin, mutta\n"
                 + "kulmat voivat koskettaa. Pyri tuhoamaan laivat "
@@ -312,7 +240,145 @@ public class Kayttoliittyma implements Runnable {
         return palautus;
     }
 
-    private static void ilmoita(String viesti) {
-        JOptionPane.showMessageDialog(null, viesti, "", JOptionPane.PLAIN_MESSAGE);
+    private static void ilmoita(String viesti, String otsikko) {
+        JOptionPane.showMessageDialog(null, viesti, otsikko, JOptionPane.PLAIN_MESSAGE);
+    }
+
+    private void uusiIkkuna() throws HeadlessException {
+        frame = new JFrame("Laivanupotus");
+        frame.setPreferredSize(new Dimension(1000, 800));
+        luoAlkuikkuna(frame);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    private void setUudenPelinLuominen(JButton uusiPeli) {
+        uusiPeli.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                lauta = new Pelilauta();
+                uusiIkkuna();
+            }
+        });
+    }
+
+    private void setTilastojenTarkastelu(JButton tilastot) {
+        tilastot.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jarjestaPisteidenMukaan();
+                try {
+                    ilmoita(topViisi(), "Top 5");
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(Kayttoliittyma.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+    }
+
+    private void satunnaistenLaivojenAsetus() {
+        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(5, "Emoalus"));
+        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(3, "Miinalautta"));
+        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(3, "Miinalautta"));
+        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(4, "Ohjusvene"));
+        lauta.laivanAsetus(lauta.luoSatunnainenLaiva(2, "Tiedustelija"));
+    }
+
+    private void asetaAakkonen(int j, JPanel paneeli) {
+        JTextArea area = new JTextArea((char) ('A' - 1 + j) + "");
+        area.setEditable(false);
+        area.setFont(boldi);
+        paneeli.add(area);
+    }
+
+    private void asetaNumero(int i, JPanel paneeli) {
+        JTextArea area = new JTextArea(i + "");
+        area.setEditable(false);
+        area.setFont(boldi);
+        paneeli.add(area);
+    }
+
+    private void asetaPeliruutu(int i, int j, JPanel paneeli, KlikkaustenKuuntelija kuuntelija) {
+        Nappula nappi = new Nappula(null, false, i - 1, j - 1);
+        lauta.getLauta()[i - 1][j - 1] = nappi;
+        paneeli.add(nappi);
+        nappi.vaihdaSiniseksi();
+        nappi.addActionListener(kuuntelija);
+    }
+
+    private void teeRuudut(JPanel paneeli, KlikkaustenKuuntelija kuuntelija) {
+        for (int i = 0; i <= lauta.getKorkeus(); i++) {
+            for (int j = 0; j <= lauta.getLeveys(); j++) {
+                if (i == 0 && j == 0) {
+                    JButton uusiPeli = new JButton("<html>Uusi<p>peli</html>");
+                    uusiPeli.setFont(new Font("s", 10, 12));
+                    paneeli.add(uusiPeli);
+                    setUudenPelinLuominen(uusiPeli);
+                } else if (i == 0) {
+                    asetaAakkonen(j, paneeli);
+                } else if (j == 0) {
+                    asetaNumero(i, paneeli);
+                } else {
+                    asetaPeliruutu(i, j, paneeli, kuuntelija);
+                }
+            }
+        }
+    }
+
+    private void asetaPelinapinToiminnallisuus(JButton nappi) {
+        nappi.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (nimikentta.getText().isEmpty() || nimikentta.getText().length() > 16) {
+                    ilmoita("Syötithän nimesi oikein?\nLuithan ohjeet? :)", "Virhe!");
+                    frame.dispose();
+                    uusiIkkuna();
+                } else {
+                    pelaaja.setNimi(nimikentta.getText().replaceAll(" ", "_"));
+                    luoPelialusta(frame);
+
+                }
+            }
+        });
+    }
+
+    private void asetaTekstikenttiinFontti(JButton tilastot) {
+        tilastot.setFont(boldi);
+        laivatilasto.setFont(boldi);
+        ilmoituskentta.setFont(boldi);
+    }
+
+    private void lisaaKentatContaineriin(Container container, JButton tilastot) {
+        container.add(tilastot, BorderLayout.NORTH);
+        container.add(ilmoituskentta, BorderLayout.SOUTH);
+        container.add(laivatilasto, BorderLayout.EAST);
+    }
+
+    private void asetaKentatPaneeliin(JButton pelinappi, JTextArea ohjeet) {
+        nimipaneeli.add(nimikentta, BorderLayout.NORTH);
+        nimipaneeli.add(pelinappi, BorderLayout.SOUTH);
+        nimipaneeli.add(ohjeet, BorderLayout.CENTER);
+    }
+
+    private void asetaLaivatilasto(String teksti) {
+        this.laivatilasto.setText(teksti);
+    }
+
+    private String laivat() {
+        String palaute = "Jäljellä olevat laivat: \n\n";
+        for (Laiva laiva : lauta.getLaivalista()) {
+            palaute = palaute + laiva.getTyyppi() + " (" + laiva.getKoko() + ") " + "\n";
+        }
+        return palaute;
+    }
+
+    private void asetaKenttiinFonttiJaEditable(JTextArea ohjeet) {
+        nimikentta.setEditable(true);
+        nimikentta.setFont(boldi);
+        ohjeet.setFont(boldi);
+        ohjeet.setEditable(false);
     }
 }

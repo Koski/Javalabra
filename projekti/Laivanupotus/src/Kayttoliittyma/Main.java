@@ -4,6 +4,7 @@
  */
 package Kayttoliittyma;
 
+import java.io.File;
 import java.io.IOException;
 import javax.swing.SwingUtilities;
 
@@ -15,6 +16,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         SwingUtilities.invokeLater(new Kayttoliittyma());
+//        File file = new File("lol.txt");
 
     }
 }

@@ -78,8 +78,13 @@ public class Nappula extends JButton {
     public void setLaiva(Laiva laiva) {
         this.laiva = laiva;
     }
-
+    /**
+     * Asettaa napin käytettävyyden pois, jotta ei voisi ampua
+     * samaan kohtaan montaa kertaa.
+     * @param osuttu käyttäjän antama parametri.
+     */
     public void setOsuttu(boolean osuttu) {
+        this.setEnabled(false);
         this.osuttu = osuttu;
     }
 

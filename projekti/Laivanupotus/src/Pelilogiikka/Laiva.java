@@ -32,7 +32,7 @@ public class Laiva {
     private int loppuY;
     /**
      * Pitää kirjaa laivan osumista, voi olla korkeintaan
-     * laivan koko.
+     * laivan koon verran.
      */
     private int osumienLkm;
     /**
