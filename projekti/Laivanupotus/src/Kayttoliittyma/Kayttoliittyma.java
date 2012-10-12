@@ -218,7 +218,10 @@ public class Kayttoliittyma implements Runnable {
         }
     }
 
-    private String topViisi() throws FileNotFoundException {
+    private String topViisi() throws FileNotFoundException, IOException {
+        if (!tiedosto.exists()) {
+            tiedosto.createNewFile();
+        }
         lukija = new Scanner(tiedosto);
 
         lukija = new Scanner(this.tiedosto);
@@ -272,7 +275,7 @@ public class Kayttoliittyma implements Runnable {
                 jarjestaPisteidenMukaan();
                 try {
                     ilmoita(topViisi(), "Top 5");
-                } catch (FileNotFoundException ex) {
+                } catch (IOException ex) {
                     Logger.getLogger(Kayttoliittyma.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
